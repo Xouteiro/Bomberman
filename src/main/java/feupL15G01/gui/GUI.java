@@ -1,6 +1,6 @@
 package feupL15G01.gui;
 
-import javax.swing.text.Position;
+import feupL15G01.model.Position;
 import java.io.IOException;
 
 public interface GUI {
