@@ -14,9 +14,9 @@ public interface GUI {
 
     void drawFixedBlock(Position position);
 
-    void drawTempBlocks(Position position);
+    void drawTempBlock(Position position);
 
-    void drawPowers(Position position /* , image */ );
+    void drawPower(Position position /* , image */ );
 
     void drawText(Position position, String text, String color);
 

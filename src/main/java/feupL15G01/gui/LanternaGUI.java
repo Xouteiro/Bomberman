@@ -55,15 +55,18 @@ public class LanternaGUI implements GUI {
     }
 
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
-        File fontFile = new File(resource.toURI());
-        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+        //URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        //File fontFile = new File(resource.toURI());
+        //Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        ge.registerFont(font);
+        //GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        //ge.registerFont(font);
 
-        Font loadedFont = font.deriveFont(Font.PLAIN, 25);
+        //Font loadedFont = font.deriveFont(Font.PLAIN, 25);
+        Font loadedFont = new Font("Courier",Font.BOLD, 10);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
+
+
         return fontConfig;
     }
 
@@ -105,13 +108,13 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawTempBlocks(Position position) {
+    public void drawTempBlock(Position position) {
         drawCharacter(position.getX(), position.getY(), 'T', "#CC000C");
 
     }
 
     @Override
-    public void drawPowers(Position position) {
+    public void drawPower(Position position) {
         drawCharacter(position.getX(), position.getY(), 'P', "#CCC0000");
     }
 
