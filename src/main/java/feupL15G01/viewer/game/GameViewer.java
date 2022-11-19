@@ -16,9 +16,12 @@ public class GameViewer extends Viewer<Board> {
 
     @Override
     public void drawElements(GUI gui) {
+        drawElement(gui, getModel().getPlayer(), new PlayerViewer());
         drawElements(gui, getModel().getWalls(), new WallViewer());
         drawElements(gui, getModel().getEnemies(), new EnemyViewer());
-        drawElement(gui, getModel().getPlayer(), new PlayerViewer());
+        drawElements(gui, getModel().getFixBlocks() , new FixBlockViewer());
+        drawElements(gui, getModel().getTempBlocks() , new TempBlockViewer());
+        drawElements(gui, getModel().getPowers() , new PowerViewer());
 
         gui.drawText(new Position(0, 0), "Bombs: " + getModel().getPlayer().getBombs(), "#FFD700");
     }

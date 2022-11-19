@@ -2,9 +2,7 @@ package feupL15G01.model.game.board;
 
 
 import feupL15G01.model.Position;
-import feupL15G01.model.game.elements.Player;
-import feupL15G01.model.game.elements.Enemy;
-import feupL15G01.model.game.elements.Wall;
+import feupL15G01.model.game.elements.*;
 
 import java.util.List;
 
@@ -13,9 +11,11 @@ public class Board {
     private final int height;
 
     private Player player;
-
     private List<Enemy> enemies;
     private List<Wall> walls;
+    private List<FixBlock> fixBlocks;
+    private List<TempBlock> tempBlocks;
+    private List<Power> powers;
 
     public Board(int width, int height) {
         this.width = width;
@@ -54,6 +54,31 @@ public class Board {
         this.walls = walls;
     }
 
+
+    public List<FixBlock> getFixBlocks() {
+        return fixBlocks;
+    }
+
+    public void setFixBlocks(List<FixBlock> fixBlocks) {
+        this.fixBlocks = fixBlocks;
+    }
+
+
+    public List<TempBlock> getTempBlocks() {
+        return tempBlocks;
+    }
+
+    public void setTempBlocks(List<TempBlock> tempBlocks) {
+        this.tempBlocks = tempBlocks;
+    }
+
+    public List<Power> getPowers() {
+        return powers;
+    }
+
+    public void setPowers(List<Power> powers) {
+        this.powers = powers;
+    }
     public boolean isEmpty(Position position) {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))

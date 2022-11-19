@@ -1,8 +1,6 @@
 package feupL15G01.model.game.elements;
 
 
-import feupL15G01.model.game.elements.Element;
-
 public class Enemy extends Element {
 
     private String type;
