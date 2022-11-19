@@ -1,4 +1,4 @@
-package feupL15G01.model.game.arena;
+package feupL15G01.model.game.board;
 
 import feupL15G01.model.game.elements.Enemy;
 import feupL15G01.model.game.elements.Player;
