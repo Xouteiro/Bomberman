@@ -3,10 +3,9 @@ package feupL15G01.viewer;
 import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
-import feupL15G01.model.game.elements.Enemy;
-import feupL15G01.model.game.elements.Player;
-import feupL15G01.model.game.elements.Wall;
+import feupL15G01.model.game.elements.*;
 import feupL15G01.viewer.game.GameViewer;
+import feupL15G01.viewer.game.TempBlockViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -28,6 +27,9 @@ class BoardViewerTest {
         board.setWalls(Arrays.asList(new Wall(1, 2), new Wall(2, 3), new Wall(3, 4)));
         board.setEnemies(Arrays.asList(new Enemy(4, 5), new Enemy(5, 6)));
         board.setPlayer(new Player(5, 8));
+        board.setFixBlocks(Arrays.asList(new FixBlock(2, 2), new FixBlock(3, 3), new FixBlock(4, 4)));
+        board.setTempBlocks(Arrays.asList(new TempBlock(2, 3), new TempBlock(3, 4), new TempBlock(4, 5)));
+        board.setPowers(Arrays.asList(new Power(2, 1), new Power(3, 2), new Power(4, 3)));
     }
 
 
