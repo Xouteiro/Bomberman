@@ -3,7 +3,7 @@ package feupL15G01.viewer.game;
 
 import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
-import feupL15G01.model.game.arena.Board;
+import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.Element;
 import feupL15G01.viewer.Viewer;
 
