@@ -1,4 +1,6 @@
-package feupL15G01.model.game;
+package feupL15G01.model.game.elements;
+
+import feupL15G01.model.game.elements.Element;
 
 public class Player extends Element {
     private int bombs;

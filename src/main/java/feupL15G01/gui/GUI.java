@@ -10,7 +10,7 @@ public interface GUI {
 
     void drawWall(Position position);
 
-    void drawMonster(Position position);
+    void drawEnemy(Position position);
 
     void drawFixedBlock(Position position);
 

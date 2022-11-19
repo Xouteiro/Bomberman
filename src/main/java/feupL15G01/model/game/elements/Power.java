@@ -1,6 +1,6 @@
-package feupL15G01.model.game;
+package feupL15G01.model.game.elements;
 
-public class Power extends TempBlock{
+public class Power extends TempBlock {
 
     private String type;
 
