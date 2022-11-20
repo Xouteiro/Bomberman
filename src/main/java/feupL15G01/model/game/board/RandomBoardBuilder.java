@@ -66,25 +66,34 @@ public class RandomBoardBuilder extends BoardBuilder {
 
     @Override
     protected List<FixBlock> createFixBlocks() {
-
-        //fazer com que os blocos apareçam como no jogo;
-
-        return null;
+        List<FixBlock> fixBlocks = new ArrayList<>();
+        for(int i = 1; i*2<width; i++){
+            for(int j = 1; j*2< height; j++){
+                fixBlocks.add(new FixBlock(i*2,j*2));
+            }
+        }
+        return fixBlocks;
     }
 
     @Override
     protected List<TempBlock> createTempBlocks() {
-
-        //fazer com que os blocos apareçam aleatoriamente onde naexistirem fixBlocks
-
-        return null;
+        List<TempBlock> tempBlocks = new ArrayList<>();
+        for(int i = 0; i*2<width; i++){
+            for(int j = 0; j*2< height; j++){
+                tempBlocks.add(new TempBlock(i*2 +1,j*2+1));
+            }
+        }
+        return tempBlocks;
     }
 
     @Override
     protected List<Power> createPowers() {
-
-        //fazer com que os poderes apareaçam aleatoriamente por baixo de alguns TempBlocks
-
-        return null;
+        List<Power> powers = new ArrayList<>();
+        for(int i = 0; i*2<width; i++){
+            for(int j = 0; j*2< height; j++){
+                powers.add(new Power(i*2 +1,j*2+1));
+            }
+        }
+        return powers;
     }
 }

@@ -5,6 +5,6 @@ import feupL15G01.model.game.elements.FixBlock;
 
 public class FixBlockViewer implements ElementViewer<FixBlock>{
     public void draw(FixBlock fixBlock, GUI gui) {
-        gui.drawFixedBlock(fixBlock.getPosition());
+        gui.drawFixBlock(fixBlock.getPosition());
     }
 }

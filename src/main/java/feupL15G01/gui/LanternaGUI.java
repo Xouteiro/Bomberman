@@ -63,7 +63,7 @@ public class LanternaGUI implements GUI {
         //ge.registerFont(font);
 
         //Font loadedFont = font.deriveFont(Font.PLAIN, 25);
-        Font loadedFont = new Font("Courier",Font.BOLD, 10);
+        Font loadedFont = new Font("Courier",Font.BOLD, 18);
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
 
 
@@ -103,7 +103,7 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
-    public void drawFixedBlock(Position position) {
+    public void drawFixBlock(Position position) {
         drawCharacter(position.getX(), position.getY(), 'F', "#C00000");
     }
 

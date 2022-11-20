@@ -12,7 +12,7 @@ public interface GUI {
 
     void drawEnemy(Position position);
 
-    void drawFixedBlock(Position position);
+    void drawFixBlock(Position position);
 
     void drawTempBlock(Position position);
 
