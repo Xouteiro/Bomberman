@@ -55,15 +55,15 @@ public class LanternaGUI implements GUI {
     }
 
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        //URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
-        //File fontFile = new File(resource.toURI());
-        //Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        File fontFile = new File(resource.toURI());
+        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
-        //GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        //ge.registerFont(font);
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        ge.registerFont(font);
 
-        //Font loadedFont = font.deriveFont(Font.PLAIN, 25);
-        Font loadedFont = new Font("Courier",Font.BOLD, 18);
+        Font loadedFont = font.deriveFont(Font.PLAIN, 25);
+        //Font loadedFont = new Font("Courier",Font.BOLD, 18); //teste antigo é para apagar
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
 
 
