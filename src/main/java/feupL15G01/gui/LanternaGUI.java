@@ -2,6 +2,7 @@ package feupL15G01.gui;
 
 import java.io.IOException;
 
+
 import feupL15G01.model.Position;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -31,6 +32,7 @@ public class LanternaGUI implements GUI {
     public LanternaGUI(int width, int height) throws IOException, FontFormatException, URISyntaxException {
         AWTTerminalFontConfiguration fontConfig = loadSquareFont();
         Terminal terminal = createTerminal(width, height, fontConfig);
+
         this.screen = createScreen(terminal);
     }
 
@@ -45,9 +47,8 @@ public class LanternaGUI implements GUI {
     }
 
     private Terminal createTerminal(int width, int height, AWTTerminalFontConfiguration fontConfig) throws IOException {
-        TerminalSize terminalSize = new TerminalSize(width, height + 1);
-        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory()
-                .setInitialTerminalSize(terminalSize);
+        TerminalSize terminalSize = new TerminalSize(width -1, height );
+        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);
         terminalFactory.setForceAWTOverSwing(true);
         terminalFactory.setTerminalEmulatorFontConfiguration(fontConfig);
         Terminal terminal = terminalFactory.createTerminal();
@@ -62,13 +63,14 @@ public class LanternaGUI implements GUI {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         ge.registerFont(font);
 
-        Font loadedFont = font.deriveFont(Font.PLAIN, 25);
+        Font loadedFont = font.deriveFont(Font.PLAIN, 12);
         //Font loadedFont = new Font("Courier",Font.BOLD, 18); //teste antigo é para apagar
         AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
 
 
         return fontConfig;
     }
+
 
     public ACTION getNextAction() throws IOException {
         KeyStroke keyStroke = screen.pollInput();
@@ -109,7 +111,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawTempBlock(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'T', "#CC000C");
+        drawCharacter(position.getX(), position.getY(), 'T', "#CCC000");
 
     }
 

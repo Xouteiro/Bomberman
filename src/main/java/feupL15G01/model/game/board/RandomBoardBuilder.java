@@ -36,25 +36,26 @@ public class RandomBoardBuilder extends BoardBuilder {
     protected List<Wall> createWalls() {
         List<Wall> walls = new ArrayList<>();
 
-        for (int x = 0; x < width; x++) {
-            walls.add(new Wall(x, 0));
-            walls.add(new Wall(x, height - 1));
+        for (int x = 1; x < width -2; x++) {
+            walls.add(new Wall(x, 1));
+            walls.add(new Wall(x, height - 3));
         }
 
-        for (int y = 1; y < height - 1; y++) {
-            walls.add(new Wall(0, y));
-            walls.add(new Wall(width - 1, y));
+        for (int y = 2; y < height - 3; y++) {
+            walls.add(new Wall(1, y));
+            walls.add(new Wall(width - 3, y));
         }
 
         return walls;
     }
 
     @Override
+
     protected List<Enemy> createEnemies() {
         List<Enemy> enemies = new ArrayList<>();
 
         while (enemies.size() < numberOfEnemies)
-            enemies.add(new Enemy(rng.nextInt(width - 2) + 1, rng.nextInt(height - 2) + 1));
+            enemies.add(new Enemy(rng.nextInt(width - 3) + 1, rng.nextInt(height - 3) + 1));
 
         return enemies;
     }
@@ -67,33 +68,37 @@ public class RandomBoardBuilder extends BoardBuilder {
     @Override
     protected List<FixBlock> createFixBlocks() {
         List<FixBlock> fixBlocks = new ArrayList<>();
-        for(int i = 1; i*2<width; i++){
-            for(int j = 1; j*2< height; j++){
-                fixBlocks.add(new FixBlock(i*2,j*2));
+        for(int i = 1; i*2<width-4; i++){
+            for(int j = 1; j*2< height-4; j++){
+                fixBlocks.add(new FixBlock(i*2+1,j*2+1));
             }
         }
         return fixBlocks;
     }
 
     @Override
+    protected List<Power> createPowers() {
+       List<Power> powers = new ArrayList<>();
+        for(int i = 1; i*2<width-2; i++){
+            for(int j = 1; j*2< height-2; j++){
+                powers.add(new Power(i*2 ,j*2));
+            }
+        }
+
+
+        return powers;
+    }
+
+    @Override
     protected List<TempBlock> createTempBlocks() {
         List<TempBlock> tempBlocks = new ArrayList<>();
-        for(int i = 0; i*2<width; i++){
-            for(int j = 0; j*2< height; j++){
-                tempBlocks.add(new TempBlock(i*2 +1,j*2+1));
+        for(int i = 1; i*2<width-2; i++){
+            for(int j = 1; j*2< height-2; j++){
+                tempBlocks.add(new TempBlock(i*2,j*2));
             }
         }
         return tempBlocks;
     }
 
-    @Override
-    protected List<Power> createPowers() {
-        List<Power> powers = new ArrayList<>();
-        for(int i = 0; i*2<width; i++){
-            for(int j = 0; j*2< height; j++){
-                powers.add(new Power(i*2 +1,j*2+1));
-            }
-        }
-        return powers;
-    }
+
 }
