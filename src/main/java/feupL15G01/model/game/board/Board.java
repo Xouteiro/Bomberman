@@ -83,6 +83,10 @@ public class Board {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))
                 return false;
+        for(FixBlock fixBlock : fixBlocks){
+            if(fixBlock.getPosition().equals(position))
+                return false;
+        }
         return true;
     }
 

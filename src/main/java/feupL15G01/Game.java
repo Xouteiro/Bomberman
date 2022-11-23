@@ -2,6 +2,7 @@ package feupL15G01;
 
 import feupL15G01.gui.LanternaGUI;
 import feupL15G01.controller.Controller;
+import feupL15G01.model.game.board.RandomBoardBuilder;
 import feupL15G01.model.menu.Menu;
 import feupL15G01.states.MenuState;
 import feupL15G01.states.State;
@@ -17,7 +18,7 @@ public class Game {
     private State state;
 
     public Game() throws FontFormatException, IOException, URISyntaxException {
-        this.gui = new LanternaGUI(49, 49);
+        this.gui = new LanternaGUI(33, 33); //+1 que o randomBoardBuilder
         this.state = new MenuState(new Menu());
     }
 

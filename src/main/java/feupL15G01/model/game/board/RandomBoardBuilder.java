@@ -55,7 +55,7 @@ public class RandomBoardBuilder extends BoardBuilder {
         List<Enemy> enemies = new ArrayList<>();
 
         while (enemies.size() < numberOfEnemies)
-            enemies.add(new Enemy(rng.nextInt(width - 3) + 1, rng.nextInt(height - 3) + 1));
+            enemies.add(new Enemy(rng.nextInt(width - 4) + 1, rng.nextInt(height - 4) + 1));
 
         return enemies;
     }
