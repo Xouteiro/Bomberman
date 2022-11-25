@@ -20,8 +20,19 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 - **Items bónus** - Items raros desbloqueados pela conquista de pontos
 
-### MOCKUP
+### MOCKUPS
 
+**Arena**
+![Arena](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Arena-1.png)
+
+**Game Over**
+![Game Over](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/GameOver-1.png)
+
+**Menu**
+![Menu](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Menu-1.png)
+
+**Vitória**
+![Vitória](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Victory-1.png)
 
 ### DESIGN
 
