@@ -8,13 +8,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.io.IOException;
+
 class LanternaGUITest {
     private Screen screen;
     private LanternaGUI gui;
     private TextGraphics tg;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws IOException {
         screen = Mockito.mock(Screen.class);
         tg = Mockito.mock(TextGraphics.class);
 

@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 
+import com.googlecode.lanterna.TerminalPosition;
+import com.googlecode.lanterna.graphics.TextImage;
 import feupL15G01.model.Position;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -26,7 +28,7 @@ import java.net.URL;
 public class LanternaGUI implements GUI {
     private final Screen screen;
 
-    public LanternaGUI(Screen screen) {
+    public LanternaGUI(Screen screen) throws IOException {
         this.screen = screen;
     }
 
@@ -72,15 +74,7 @@ public class LanternaGUI implements GUI {
         return fontConfig;
     }
 
-    BufferedImage bombImage;
-
-    {
-        try {
-            bombImage = ImageIO.read(getClass().getClassLoader().getResource("images/16bit_bomb1.png"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    BufferedImage bombImage = ImageIO.read(getClass().getClassLoader().getResource("images/16bit_bomb1.png"));
 
 
     public ACTION getNextAction() throws IOException {
@@ -102,7 +96,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPlayer(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'H', "#FFD700");
+        drawCharacter(position.getX(),position.getY(), 'H', "#FFD700");
     }
 
     @Override
@@ -144,13 +138,17 @@ public class LanternaGUI implements GUI {
         // tg.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF")); exemplo de mudar cor de fundo
         tg.putString(x, y + 1, "" + c);
     }
-    private void drawCharacterAsImage(int x, int y, BufferedImage image,  String color) {
+
+
+    /*
+    private void drawCharacterAsImage(Position position, BufferedImage image, String color) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
         // tg.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF")); exemplo de mudar cor de fundo
-        tg.putString(x, y + 1, "" + image);
-    }
 
+        tg.setCharacter(position.getX(), position.getY(), image);
+    }
+*/
 
     @Override
     public void clear() {
