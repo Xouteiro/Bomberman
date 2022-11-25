@@ -30,11 +30,11 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 As classes usadas são as apresentadas abaixo e estão contidas nos ficheiros associados:
 
-- [Player](https://github.com/FEUP-LDTS-2022/project-l15gr01/src/main/java/feupL15G01/model/game/elements/Player.java)
-- [StaticBlock](https://github.com/FEUP-LDTS-2022/project-l15gr01/src/main/java/feupL15G01/model/game/elements/FixBlock.java)
-- [TempBlock](https://github.com/FEUP-LDTS-2022/project-l15gr01/src/main/java/feupL15G01/model/game/elements/TempBlock.java)
-- [Enemy](https://github.com/FEUP-LDTS-2022/project-l15gr01/src/main/java/feupL15G01/model/game/elements/Enemy.java)
-- [Power](https://github.com/FEUP-LDTS-2022/project-l15gr01/src/main/java/feupL15G01/model/game/elements/Power.java)
-- [Wall](https://github.com/FEUP-LDTS-2022/project-l15gr01/src/main/java/feupL15G01/model/game/elements/Wall.java)
+- [Player](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Player.java)
+- [StaticBlock](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/FixBlock.java)
+- [TempBlock](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/TempBlock.java)
+- [Enemy](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Enemy.java)
+- [Power](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Power.java)
+- [Wall](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Wall.java)
 
 ------
