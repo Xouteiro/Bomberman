@@ -68,7 +68,7 @@ As classes usadas são as apresentadas abaixo e estão contidas nos ficheiros as
 
 ### TESTAGEM
 
-![Coverage](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/CoverageInterm.png) 
+![Coverage](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/coverageInterm.png) 
 
 ### AUTOAVALIAÇÃO
 
