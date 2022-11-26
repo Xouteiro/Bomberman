@@ -23,15 +23,19 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 ### MOCKUPS
 
 **Arena**
+
 ![Arena](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Arena.png) 
 
 **Game Over**
+
 ![Game Over](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/GameOver.png)
 
 **Menu**
+
 ![Menu](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Menu.png)
 
 **Vitória**
+
 ![Vitória](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Victory.png)
 
 ### DESIGN
