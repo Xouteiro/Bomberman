@@ -40,6 +40,8 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 ### DESIGN
 
+#### COMPORTAMENTO DA PERSONAGEM JOGÁVEL VARIANTE CONSOANTE OS PODERES OBTIDOS
+
 **Problema em contexto** 
 
 O comportamento das ações do jogador irá variar consoante os diferentes poderes que adquiriu durante o jogo até aí (irá potencialmente conseguir passar por cima das bombas que colocou, estas poderão ganhar maior alcance, etc.).
@@ -50,7 +52,7 @@ Aplicou-se o padrão *State* na estruturação do programa, onde o comportamento
 
 **Implementação**
 
-As classes usadas são as apresentadas abaixo e estão contidas nos ficheiros associados:
+As classes relacionadas são as apresentadas abaixo e estão contidas nos ficheiros associados:
 
 - [Player](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Player.java)
 - [StaticBlock](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/FixBlock.java)
@@ -63,6 +65,16 @@ As classes usadas são as apresentadas abaixo e estão contidas nos ficheiros as
 
 - Os vários estados que representam as abilidades e comportamento da personagem principal ficam explícitos no código, em vez de baseados em flags.
 - Não será necessário o uso de grandes conjuntos de *ifs* e *switches* associados aos diversos estados. Ao invés disso, o polimorfismo vai ativar as ações certas.
+
+#### EXCESSO DE CÓDIGO NUMA ÚNICA SECÇÃO E DIFÍCIL LEITURA
+
+**Problema em contexto** 
+
+Devido à possível existência de uma quantidade excessiva de código e desorganização caso este fosse restringido a um único ficheiro, procurou-se escolher uma arquitetura que melhor resolvesse este problema e se adequasse às especificações únicas do programa em questão.
+
+**Padrão utilizado**
+
+Dada a grande quantidade de código e diversas classes a utilizar ao todo, para criar o programa de uma maneira mais eficaz e organizada, foi escolhido o padrão de arquitetura Model-view-controller (MVC), tendo também em conta o uso de uma *graphical user interface* (GUI).
 
 **Diagrama de classes UML**
 
