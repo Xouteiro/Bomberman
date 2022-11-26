@@ -1,0 +1,207 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > RandomBoardBuilder</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">feupL15G01.model.game.board</a>
+</div>
+
+<h1>Coverage Summary for Class: RandomBoardBuilder (feupL15G01.model.game.board)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RandomBoardBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/35)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package feupL15G01.model.game.board;
+&nbsp;
+&nbsp;
+&nbsp;import feupL15G01.model.game.elements.*;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Random;
+&nbsp;
+&nbsp;public class RandomBoardBuilder extends BoardBuilder {
+&nbsp;    private final Random rng;
+&nbsp;
+&nbsp;    private final int width;
+&nbsp;    private final int height;
+&nbsp;    private final int numberOfEnemies;
+&nbsp;
+<b class="nc">&nbsp;    public RandomBoardBuilder(int width, int height, int numberOfEnemies) {</b>
+<b class="nc">&nbsp;        this.rng = new Random();</b>
+&nbsp;
+<b class="nc">&nbsp;        this.width = width;</b>
+<b class="nc">&nbsp;        this.height = height;</b>
+<b class="nc">&nbsp;        this.numberOfEnemies = numberOfEnemies;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected int getWidth() {
+<b class="nc">&nbsp;        return width;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected int getHeight() {
+<b class="nc">&nbsp;        return height;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected List&lt;Wall&gt; createWalls() {
+<b class="nc">&nbsp;        List&lt;Wall&gt; walls = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;        for (int x = 1; x &lt; width -2; x++) {</b>
+<b class="nc">&nbsp;            walls.add(new Wall(x, 1));</b>
+<b class="nc">&nbsp;            walls.add(new Wall(x, height - 3));</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        for (int y = 2; y &lt; height - 3; y++) {</b>
+<b class="nc">&nbsp;            walls.add(new Wall(1, y));</b>
+<b class="nc">&nbsp;            walls.add(new Wall(width - 3, y));</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return walls;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;
+&nbsp;    protected List&lt;Enemy&gt; createEnemies() {
+<b class="nc">&nbsp;        List&lt;Enemy&gt; enemies = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;        while (enemies.size() &lt; numberOfEnemies)</b>
+<b class="nc">&nbsp;            enemies.add(new Enemy(rng.nextInt(width - 4) + 1, rng.nextInt(height - 4) + 1));</b>
+&nbsp;
+<b class="nc">&nbsp;        return enemies;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected Player createPlayer() {
+<b class="nc">&nbsp;        return new Player(width / 2, height / 2);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected List&lt;FixBlock&gt; createFixBlocks() {
+<b class="nc">&nbsp;        List&lt;FixBlock&gt; fixBlocks = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        for(int i = 1; i*2&lt;width-4; i++){</b>
+<b class="nc">&nbsp;            for(int j = 1; j*2&lt; height-4; j++){</b>
+<b class="nc">&nbsp;                fixBlocks.add(new FixBlock(i*2+1,j*2+1));</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return fixBlocks;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected List&lt;Power&gt; createPowers() {
+<b class="nc">&nbsp;       List&lt;Power&gt; powers = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        for(int i = 1; i*2&lt;width-2; i++){</b>
+<b class="nc">&nbsp;            for(int j = 1; j*2&lt; height-2; j++){</b>
+<b class="nc">&nbsp;                powers.add(new Power(i*2 ,j*2));</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        return powers;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected List&lt;TempBlock&gt; createTempBlocks() {
+<b class="nc">&nbsp;        List&lt;TempBlock&gt; tempBlocks = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        for(int i = 1; i*2&lt;width-2; i++){</b>
+<b class="nc">&nbsp;            for(int j = 1; j*2&lt; height-2; j++){</b>
+<b class="nc">&nbsp;                tempBlocks.add(new TempBlock(i*2,j*2));</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return tempBlocks;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-26 00:03</div>
+</div>
+</body>
+</html>

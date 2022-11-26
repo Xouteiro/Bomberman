@@ -1,0 +1,141 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > GameViewer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">feupL15G01.viewer.game</a>
+</div>
+
+<h1>Coverage Summary for Class: GameViewer (feupL15G01.viewer.game)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GameViewer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package feupL15G01.viewer.game;
+&nbsp;
+&nbsp;
+&nbsp;import feupL15G01.gui.GUI;
+&nbsp;import feupL15G01.model.Position;
+&nbsp;import feupL15G01.model.game.board.Board;
+&nbsp;import feupL15G01.model.game.elements.Element;
+&nbsp;import feupL15G01.viewer.Viewer;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class GameViewer extends Viewer&lt;Board&gt; {
+&nbsp;    public GameViewer(Board board) {
+<b class="fc">&nbsp;        super(board);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void drawElements(GUI gui) {
+<b class="fc">&nbsp;        drawElement(gui, getModel().getPlayer(), new PlayerViewer());</b>
+<b class="fc">&nbsp;        drawElements(gui, getModel().getWalls(), new WallViewer());</b>
+<b class="fc">&nbsp;        drawElements(gui, getModel().getEnemies(), new EnemyViewer()); //erro inimigos nascerem fora</b>
+<b class="fc">&nbsp;        drawElements(gui, getModel().getFixBlocks() , new FixBlockViewer());</b>
+<b class="fc">&nbsp;        drawElements(gui, getModel().getTempBlocks() , new TempBlockViewer());</b>
+<b class="fc">&nbsp;        drawElements(gui, getModel().getPowers() , new PowerViewer());</b>
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new Position(2, 1), &quot;Bombs: &quot; + getModel().getPlayer().getBombs(), &quot;#FFD700&quot;);</b>
+<b class="fc">&nbsp;        gui.drawText(new Position(20,32), &quot;Q to go back&quot;, &quot;#FFFFFF&quot; );</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private &lt;T extends Element&gt; void drawElements(GUI gui, List&lt;T&gt; elements, ElementViewer&lt;T&gt; viewer) {
+<b class="fc">&nbsp;        for (T element : elements)</b>
+<b class="fc">&nbsp;            drawElement(gui, element, viewer);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private &lt;T extends Element&gt; void drawElement(GUI gui, T element, ElementViewer&lt;T&gt; viewer) {
+<b class="fc">&nbsp;        viewer.draw(element, gui);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-26 00:03</div>
+</div>
+</body>
+</html>
