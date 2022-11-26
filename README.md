@@ -40,7 +40,8 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 ### DESIGN
 
-#### COMPORTAMENTO DA PERSONAGEM JOGÁVEL VARIANTE CONSOANTE OS PODERES OBTIDOS
+#### COMPORTAMENTO DA PERSONAGEM CONTROLADA VARIÁVEL
+
 
 **Problema em contexto** 
 
@@ -66,7 +67,8 @@ As classes relacionadas são as apresentadas abaixo e estão contidas nos fichei
 - Os vários estados que representam as abilidades e comportamento da personagem principal ficam explícitos no código, em vez de baseados em flags.
 - Não será necessário o uso de grandes conjuntos de *ifs* e *switches* associados aos diversos estados. Ao invés disso, o polimorfismo vai ativar as ações certas.
 
-#### EXCESSO DE CÓDIGO NUMA ÚNICA SECÇÃO E DIFÍCIL LEITURA
+#### EXCESSO DE CÓDIGO NUMA SECÇÃO E DIFÍCIL LEITURA
+
 
 **Problema em contexto** 
 
@@ -77,6 +79,8 @@ Devido à possível existência de uma quantidade excessiva de código e desorga
 Dada a grande quantidade de código e diversas classes a utilizar ao todo, para criar o programa de uma maneira mais eficaz e organizada, foi escolhido o padrão de arquitetura Model-view-controller (MVC), tendo também em conta o uso de uma *graphical user interface* (GUI).
 
 **Diagrama de classes UML**
+
+![Diagram](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/diagram.png) 
 
 ### TESTAGEM
 
