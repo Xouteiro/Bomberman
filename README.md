@@ -84,7 +84,11 @@ Dada a grande quantidade de código e diversas classes a utilizar ao todo, para 
 
 ### TESTAGEM
 
+**Coverage testing**
+
 ![Coverage](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/coverageInterm.png) 
+
+**Mutation testing**
 
 ### AUTOAVALIAÇÃO
 
