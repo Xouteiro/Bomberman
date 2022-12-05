@@ -75,6 +75,10 @@ public class LanternaGUI implements GUI {
     }
 
     BufferedImage bombImage = ImageIO.read(getClass().getClassLoader().getResource("images/16bit_bomb1.png"));
+    BufferedImage playerImage = ImageIO.read(getClass().getClassLoader().getResource("images/power_2.png"));
+    BufferedImage tempblockImage = ImageIO.read(getClass().getClassLoader().getResource("images/temp_block.png"));
+    BufferedImage enemyImage = ImageIO.read(getClass().getClassLoader().getResource("images/enemy_f.png"));
+    BufferedImage fixblockImage = ImageIO.read(getClass().getClassLoader().getResource("images/fix_block.png"));
 
 
     public ACTION getNextAction() throws IOException {
@@ -96,33 +100,32 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawPlayer(Position position) {
-        drawCharacter(position.getX(),position.getY(), 'H', "#FFD700");
+        drawElement(position.getX(),position.getY(), playerImage);
     }
 
     @Override
     public void drawWall(Position position) {
-        drawCharacter(position.getX(), position.getY(), '#', "#3333FF");
+        drawElement(position.getX(), position.getY(), fixblockImage);
     }
 
     @Override
     public void drawEnemy(Position position) {
-        drawCharacter(position.getX(), position.getY(), '@', "#CC0000");
+        drawElement(position.getX(), position.getY(), enemyImage);
     }
 
     @Override
     public void drawFixBlock(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'F', "#C00000");
+        drawElement(position.getX(), position.getY(), fixblockImage);
     }
 
     @Override
     public void drawTempBlock(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'T', "#CCC000");
-
+        drawElement(position.getX(), position.getY(), tempblockImage);
     }
 
     @Override
     public void drawPower(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'P', "#CCC000");
+        drawElement(position.getX(), position.getY(), playerImage);
     }
 
     @Override
@@ -132,23 +135,8 @@ public class LanternaGUI implements GUI {
         tg.putString(position.getX(), position.getY(), text);
     }
 
-    private void drawCharacter(int x, int y, char c,  String color) {
-        TextGraphics tg = screen.newTextGraphics();
-        tg.setForegroundColor(TextColor.Factory.fromString(color));
-        // tg.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF")); exemplo de mudar cor de fundo
-        tg.putString(x, y + 1, "" + c);
+    private void drawElement(int x, int y, BufferedImage i) {
     }
-
-
-    /*
-    private void drawCharacterAsImage(Position position, BufferedImage image, String color) {
-        TextGraphics tg = screen.newTextGraphics();
-        tg.setForegroundColor(TextColor.Factory.fromString(color));
-        // tg.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF")); exemplo de mudar cor de fundo
-
-        tg.setCharacter(position.getX(), position.getY(), image);
-    }
-*/
 
     @Override
     public void clear() {

@@ -16,7 +16,7 @@ public interface GUI {
 
     void drawTempBlock(Position position);
 
-    void drawPower(Position position /* , image */ );
+    void drawPower(Position position);
 
     void drawText(Position position, String text, String color);
 
