@@ -88,8 +88,8 @@ Dada a grande quantidade de código e diversas classes a utilizar ao todo, para 
 
 ### AUTOAVALIAÇÃO
 
-- Daniel Vecera (33.3%)
-- Gabriela Silva (33.3%)
-- Xavier Outeiro (33.3%)
+- Daniel Vecera: 33.3%
+- Gabriela Silva: 33.3%
+- Xavier Outeiro: 33.3%
 
 ------
