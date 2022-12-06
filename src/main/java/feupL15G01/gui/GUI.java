@@ -8,6 +8,8 @@ public interface GUI {
 
     void drawPlayer(Position position);
 
+    void drawBomb(Position position);
+
     void drawWall(Position position);
 
     void drawEnemy(Position position);
