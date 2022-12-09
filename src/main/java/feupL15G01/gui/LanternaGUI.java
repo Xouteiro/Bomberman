@@ -136,6 +136,8 @@ public class LanternaGUI implements GUI {
     }
 
     private void drawElement(int x, int y, BufferedImage i) {
+        TextGraphics tg = screen.newTextGraphics();
+        tg.
     }
 
     @Override
