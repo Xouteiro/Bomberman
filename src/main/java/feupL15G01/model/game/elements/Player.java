@@ -1,4 +1,5 @@
 package feupL15G01.model.game.elements;
+import java.awt.*;
 
 public class Player extends Element {
     private int bombs;

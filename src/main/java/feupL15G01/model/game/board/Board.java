@@ -11,6 +11,8 @@ public class Board {
     private final int height;
 
     private Player player;
+    //temporario
+    private Bomb bomb;
     private List<Enemy> enemies;
     private List<Wall> walls;
     private List<FixBlock> fixBlocks;
@@ -34,10 +36,12 @@ public class Board {
         return player;
     }
 
+    //public Bomb getBomb(){return bomb;}
     public void setPlayer(Player player) {
         this.player = player;
     }
 
+    //public void setBomb(Bomb bomb) {this.bomb = bomb;}
     public List<Enemy> getEnemies() {
         return enemies;
     }

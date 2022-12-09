@@ -4,6 +4,7 @@ import feupL15G01.Game;
 import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
+import feupL15G01.model.game.elements.Bomb;
 
 public class PlayerController extends GameController {
     public PlayerController(Board board) {
@@ -33,11 +34,15 @@ public class PlayerController extends GameController {
         }
     }
 
+    private void dropBomb(){
+        Bomb bomb = new Bomb(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY());
+    }
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
         if (action == GUI.ACTION.UP) movePlayerUp();
         if (action == GUI.ACTION.RIGHT) movePlayerRight();
         if (action == GUI.ACTION.DOWN) movePlayerDown();
         if (action == GUI.ACTION.LEFT) movePlayerLeft();
+        if (action == GUI.ACTION.SPACE) dropBomb();
     }
 }

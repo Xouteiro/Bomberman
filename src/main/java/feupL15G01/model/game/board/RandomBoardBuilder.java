@@ -65,6 +65,7 @@ public class RandomBoardBuilder extends BoardBuilder {
         return new Player(width / 2, height / 2);
     }
 
+    //protected Bomb createBomb() {return new Bomb()}
     @Override
     protected List<FixBlock> createFixBlocks() {
         List<FixBlock> fixBlocks = new ArrayList<>();

@@ -9,6 +9,7 @@ public abstract class BoardBuilder {
         Board board = new Board(getWidth(), getHeight());
 
         board.setPlayer(createPlayer());
+        //board.setBomb(createBomb());
         board.setEnemies(createEnemies());
         board.setWalls(createWalls());
         board.setFixBlocks(createFixBlocks());
@@ -27,6 +28,8 @@ public abstract class BoardBuilder {
     protected abstract List<Enemy> createEnemies();
 
     protected abstract Player createPlayer();
+
+    //protected abstract Bomb createBomb();
 
     protected abstract List<FixBlock> createFixBlocks();
 

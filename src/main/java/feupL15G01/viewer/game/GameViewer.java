@@ -22,6 +22,7 @@ public class GameViewer extends Viewer<Board> {
         drawElements(gui, getModel().getFixBlocks() , new FixBlockViewer());
         drawElements(gui, getModel().getTempBlocks() , new TempBlockViewer());
         drawElements(gui, getModel().getPowers() , new PowerViewer());
+        drawElement(gui, getModel().getBomb(), new BombViewer()); //temporario
 
         gui.drawText(new Position(2, 1), "Bombs: " + getModel().getPlayer().getBombs(), "#FFD700");
         gui.drawText(new Position(20,32), "Q to go back", "#FFFFFF" );
