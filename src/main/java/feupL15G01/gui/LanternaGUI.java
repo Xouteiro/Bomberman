@@ -74,15 +74,13 @@ public class LanternaGUI implements GUI {
         return fontConfig;
     }
 
-    BufferedImage bombImage = ImageIO.read(getClass().getClassLoader().getResource("images/16bit_bomb1.png"));
-
 
     public ACTION getNextAction() throws IOException {
         KeyStroke keyStroke = screen.pollInput();
         if (keyStroke == null) return ACTION.NONE;
 
         if (keyStroke.getKeyType() == KeyType.EOF) return ACTION.QUIT;
-        if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == 'q') return ACTION.QUIT;
+        if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'q' || keyStroke.getCharacter() == 'Q')) return ACTION.QUIT;
 
         if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
@@ -93,7 +91,6 @@ public class LanternaGUI implements GUI {
 
         return ACTION.NONE;
     }
-
     @Override
     public void drawPlayer(Position position) {
         drawCharacter(position.getX(),position.getY(), 'H', "#FFD700");
@@ -116,9 +113,7 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawTempBlock(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'T', "#CCC000");
-
-    }
+        drawCharacter(position.getX(), position.getY(), 'T', "#CCC000");}
 
     @Override
     public void drawPower(Position position) {
@@ -138,9 +133,7 @@ public class LanternaGUI implements GUI {
         // tg.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF")); exemplo de mudar cor de fundo
         tg.putString(x, y + 1, "" + c);
     }
-
-
-    /*
+/*
     private void drawCharacterAsImage(Position position, BufferedImage image, String color) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
