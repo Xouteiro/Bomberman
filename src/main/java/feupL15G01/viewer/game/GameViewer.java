@@ -25,6 +25,7 @@ public class GameViewer extends Viewer<Board> {
 
         gui.drawText(new Position(2, 1), "Bombs: " + getModel().getPlayer().getBombs(), "#FFD700");
         gui.drawText(new Position(20,32), "Q to go back", "#FFFFFF" );
+
     }
 
     private <T extends Element> void drawElements(GUI gui, List<T> elements, ElementViewer<T> viewer) {

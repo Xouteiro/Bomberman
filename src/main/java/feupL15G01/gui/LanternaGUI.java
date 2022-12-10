@@ -4,8 +4,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.graphics.TextImage;
 import feupL15G01.model.Position;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -25,6 +23,8 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+
+
 public class LanternaGUI implements GUI {
     private final Screen screen;
 
@@ -42,7 +42,6 @@ public class LanternaGUI implements GUI {
     private Screen createScreen(Terminal terminal) throws IOException {
         final Screen screen;
         screen = new TerminalScreen(terminal);
-
         screen.setCursorPosition(null);
         screen.startScreen();
         screen.doResizeIfNecessary();
@@ -59,7 +58,7 @@ public class LanternaGUI implements GUI {
     }
 
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        URL resource = getClass().getClassLoader().getResource("fonts/trevi.ttf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
@@ -93,7 +92,8 @@ public class LanternaGUI implements GUI {
     }
     @Override
     public void drawPlayer(Position position) {
-        drawCharacter(position.getX(),position.getY(), 'H', "#FFD700");
+        drawCharacter(position.getX(),position.getY(), '&', "#FFFFFF","#000000");
+      //  drawCharacter(position.getX(),position.getY(), '.', "#888888","#000000"); funçao para a bomba
     }
 
     @Override
@@ -103,26 +103,28 @@ public class LanternaGUI implements GUI {
 
     @Override
     public void drawWall(Position position) {
-        drawCharacter(position.getX(), position.getY(), '#', "#3333FF");
+        drawCharacter(position.getX(), position.getY(), ']',"#211F23" ,"#524E56");
     }
 
     @Override
     public void drawEnemy(Position position) {
-        drawCharacter(position.getX(), position.getY(), '@', "#CC0000");
+        drawCharacter(position.getX(), position.getY(), '@', "#FFA500","#000000");
     }
 
     @Override
     public void drawFixBlock(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'F', "#C00000");
+        drawCharacter(position.getX(), position.getY(), '}',"#808080" ,"#211F23");
     }
 
     @Override
     public void drawTempBlock(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'T', "#CCC000");}
+
+        drawCharacter(position.getX(), position.getY(), ']', "#CDEDCC","#712F26");}
+
 
     @Override
     public void drawPower(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'P', "#CCC000");
+        drawCharacter(position.getX(), position.getY(), 'P', "#CCC000","#000000");
     }
 
     @Override
@@ -132,21 +134,14 @@ public class LanternaGUI implements GUI {
         tg.putString(position.getX(), position.getY(), text);
     }
 
-    private void drawCharacter(int x, int y, char c,  String color) {
+
+    private void drawCharacter(int x, int y, char c,  String color, String backgroundColor) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
-        // tg.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF")); exemplo de mudar cor de fundo
+        tg.setBackgroundColor(TextColor.Factory.fromString(backgroundColor)); //exemplo de mudar cor de fundo do caracter
         tg.putString(x, y + 1, "" + c);
     }
-/*
-    private void drawCharacterAsImage(Position position, BufferedImage image, String color) {
-        TextGraphics tg = screen.newTextGraphics();
-        tg.setForegroundColor(TextColor.Factory.fromString(color));
-        // tg.setBackgroundColor(TextColor.Factory.fromString("#FFFFFF")); exemplo de mudar cor de fundo
 
-        tg.setCharacter(position.getX(), position.getY(), image);
-    }
-*/
 
     @Override
     public void clear() {
