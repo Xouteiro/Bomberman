@@ -7,8 +7,8 @@ import feupL15G01.viewer.Viewer;
 import feupL15G01.viewer.game.GameViewer;
 
 public class GameState extends State<Board> {
-    public GameState(Board arena) {
-        super(arena);
+    public GameState(Board board) {
+        super(board);
     }
 
     @Override

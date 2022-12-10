@@ -4,8 +4,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 
-import com.googlecode.lanterna.TerminalPosition;
-import com.googlecode.lanterna.graphics.TextImage;
 import feupL15G01.model.Position;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -25,6 +23,8 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+
+
 public class LanternaGUI implements GUI {
     private final Screen screen;
 
@@ -42,7 +42,6 @@ public class LanternaGUI implements GUI {
     private Screen createScreen(Terminal terminal) throws IOException {
         final Screen screen;
         screen = new TerminalScreen(terminal);
-
         screen.setCursorPosition(null);
         screen.startScreen();
         screen.doResizeIfNecessary();
@@ -59,7 +58,7 @@ public class LanternaGUI implements GUI {
     }
 
     private AWTTerminalFontConfiguration loadSquareFont() throws URISyntaxException, FontFormatException, IOException {
-        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        URL resource = getClass().getClassLoader().getResource("fonts/trevi.ttf");
         File fontFile = new File(resource.toURI());
         Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
 
@@ -74,11 +73,6 @@ public class LanternaGUI implements GUI {
         return fontConfig;
     }
 
-    BufferedImage bombImage = ImageIO.read(getClass().getClassLoader().getResource("images/16bit_bomb1.png"));
-    BufferedImage playerImage = ImageIO.read(getClass().getClassLoader().getResource("images/power_2.png"));
-    BufferedImage tempblockImage = ImageIO.read(getClass().getClassLoader().getResource("images/temp_block.png"));
-    BufferedImage enemyImage = ImageIO.read(getClass().getClassLoader().getResource("images/enemy_f.png"));
-    BufferedImage fixblockImage = ImageIO.read(getClass().getClassLoader().getResource("images/fix_block.png"));
 
 
     public ACTION getNextAction() throws IOException {
@@ -97,35 +91,34 @@ public class LanternaGUI implements GUI {
 
         return ACTION.NONE;
     }
-
     @Override
     public void drawPlayer(Position position) {
-        drawElement(position.getX(),position.getY(), playerImage);
+        drawCharacter(position.getX(),position.getY(), '&', "#FFFFFF","#000000");
+      //  drawCharacter(position.getX(),position.getY(), '.', "#888888","#000000"); funçao para a bomba
     }
 
     @Override
     public void drawWall(Position position) {
-        drawElement(position.getX(), position.getY(), fixblockImage);
+        drawCharacter(position.getX(), position.getY(), ']',"#211F23" ,"#524E56");
     }
 
     @Override
     public void drawEnemy(Position position) {
-        drawElement(position.getX(), position.getY(), enemyImage);
+        drawCharacter(position.getX(), position.getY(), '@', "#FFA500","#000000");
     }
 
     @Override
     public void drawFixBlock(Position position) {
-        drawElement(position.getX(), position.getY(), fixblockImage);
+        drawCharacter(position.getX(), position.getY(), '}',"#808080" ,"#211F23");
     }
 
     @Override
     public void drawTempBlock(Position position) {
-        drawElement(position.getX(), position.getY(), tempblockImage);
-    }
+        drawCharacter(position.getX(), position.getY(), ']', "#CDEDCC","#712F26");}
 
     @Override
     public void drawPower(Position position) {
-        drawElement(position.getX(), position.getY(), playerImage);
+        drawCharacter(position.getX(), position.getY(), 'P', "#CCC000","#000000");
     }
 
     @Override
@@ -135,9 +128,12 @@ public class LanternaGUI implements GUI {
         tg.putString(position.getX(), position.getY(), text);
     }
 
-    private void drawElement(int x, int y, BufferedImage i) {
+
+    private void drawCharacter(int x, int y, char c,  String color, String backgroundColor) {
         TextGraphics tg = screen.newTextGraphics();
-        tg.
+        tg.setForegroundColor(TextColor.Factory.fromString(color));
+        tg.setBackgroundColor(TextColor.Factory.fromString(backgroundColor)); //exemplo de mudar cor de fundo do caracter
+        tg.putString(x, y + 1, "" + c);
     }
 
     @Override

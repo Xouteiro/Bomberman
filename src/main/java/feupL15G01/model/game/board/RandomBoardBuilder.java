@@ -14,12 +14,21 @@ public class RandomBoardBuilder extends BoardBuilder {
     private final int height;
     private final int numberOfEnemies;
 
-    public RandomBoardBuilder(int width, int height, int numberOfEnemies) {
+    private final int numberOfTempBlocks;
+
+    private final int numberOfPowers;
+
+
+    public RandomBoardBuilder(int width, int height, int numberOfEnemies, int numberOfTempBlocks, int numberOfPowers) {
+
+
         this.rng = new Random();
 
         this.width = width;
         this.height = height;
         this.numberOfEnemies = numberOfEnemies;
+        this.numberOfTempBlocks = numberOfTempBlocks;
+        this.numberOfPowers = numberOfPowers;
     }
 
     @Override
@@ -55,7 +64,7 @@ public class RandomBoardBuilder extends BoardBuilder {
         List<Enemy> enemies = new ArrayList<>();
 
         while (enemies.size() < numberOfEnemies)
-            enemies.add(new Enemy(rng.nextInt(width - 4) + 1, rng.nextInt(height - 4) + 1));
+            enemies.add(new Enemy(rng.nextInt(width - 4) + 2, rng.nextInt(height - 4) + 1));
 
         return enemies;
     }
