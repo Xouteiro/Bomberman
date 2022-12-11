@@ -18,13 +18,16 @@ public class GameViewer extends Viewer<Board> {
     public void drawElements(GUI gui) {
         drawElement(gui, getModel().getPlayer(), new PlayerViewer());
         drawElements(gui, getModel().getWalls(), new WallViewer());
-        drawElements(gui, getModel().getEnemies(), new EnemyViewer()); //erro inimigos nascerem fora
-        drawElements(gui, getModel().getFixBlocks() , new FixBlockViewer());
-        drawElements(gui, getModel().getTempBlocks() , new TempBlockViewer());
-        drawElements(gui, getModel().getPowers() , new PowerViewer());
+        drawElements(gui, getModel().getEnemies(), new EnemyViewer());
+        drawElements(gui, getModel().getFixBlocks(), new FixBlockViewer());
+
+
+        drawElements(gui, getModel().getPowers(), new PowerViewer());
+        drawElements(gui, getModel().getTempBlocks(), new TempBlockViewer());
+
 
         gui.drawText(new Position(2, 1), "Bombs: " + getModel().getPlayer().getBombs(), "#FFD700");
-        gui.drawText(new Position(20,32), "Q to go back", "#FFFFFF" );
+        gui.drawText(new Position(20, 32), "Q to go back", "#FFFFFF");
 
     }
 
@@ -36,4 +39,6 @@ public class GameViewer extends Viewer<Board> {
     private <T extends Element> void drawElement(GUI gui, T element, ElementViewer<T> viewer) {
         viewer.draw(element, gui);
     }
+
+
 }

@@ -24,7 +24,7 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedStart()) game.setState(new GameState(new RandomBoardBuilder(32,32,3, 10, 5).createBoard())); //as medidas têm que ser pares aqui
+                if (getModel().isSelectedStart()) game.setState(new GameState(new RandomBoardBuilder(32,32,4, 200, 5).createBoard())); //as medidas têm que ser pares aqui
                 //                                                                                                                                                                             e tem que se mudar os valores dos dois ultimos parametros
         }
     }

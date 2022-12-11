@@ -18,6 +18,8 @@ public class RandomBoardBuilder extends BoardBuilder {
 
     private final int numberOfPowers;
 
+    private List<Power> powersNew = new ArrayList<Power>();
+
 
     public RandomBoardBuilder(int width, int height, int numberOfEnemies, int numberOfTempBlocks, int numberOfPowers) {
 
@@ -29,6 +31,20 @@ public class RandomBoardBuilder extends BoardBuilder {
         this.numberOfEnemies = numberOfEnemies;
         this.numberOfTempBlocks = numberOfTempBlocks;
         this.numberOfPowers = numberOfPowers;
+    }
+
+    @Override
+    public Board createBoard() {
+        Board board = new Board(getWidth(), getHeight());
+
+        board.setPlayer(createPlayer());
+        board.setEnemies(createEnemies());
+        board.setWalls(createWalls());
+        board.setFixBlocks(createFixBlocks());
+        board.setTempBlocks(createTempBlocks());
+        board.setPowers(createPowers());
+
+        return board;
     }
 
     @Override
@@ -72,7 +88,7 @@ public class RandomBoardBuilder extends BoardBuilder {
 
     @Override
     protected Player createPlayer() {
-        return new Player(width / 2, height / 2);
+        return new Player(2, 2);
     }
 
     @Override
@@ -86,23 +102,6 @@ public class RandomBoardBuilder extends BoardBuilder {
         return fixBlocks;
     }
 
-    @Override
-    protected List<Power> createPowers() {
-       List<Power> powers = new ArrayList<>();
-        for( int i = 2; i<=width-4; i++){
-            for( int j = 2; j<=height-4; j++){
-
-                if(i%2 == 0 && (i>4 || j>4)){
-                    powers.add(new Power(i , j ));
-                }
-                if(i%2==1 && (j-1)*2 <= height-4 && (i>4 || (j-1)*2 > 4)){
-                    powers.add(new Power(i, (j-1)*2));
-                }
-
-            }
-        }
-        return powers;
-    }
 
     @Override
     protected List<TempBlock> createTempBlocks() {
@@ -119,7 +118,30 @@ public class RandomBoardBuilder extends BoardBuilder {
 
             }
         }
+
+        while(tempBlocks.size()>numberOfTempBlocks){
+            int rem = rng.nextInt(tempBlocks.size()-1);
+            tempBlocks.remove(rem);
+        }
+
+        for(int a = 0; a<tempBlocks.size(); a++){
+            Power toAdd = new Power(tempBlocks.get(a).getPosition().getX(),tempBlocks.get(a).getPosition().getY());
+            powersNew.add(toAdd);
+        }
         return tempBlocks;
+    }
+    @Override
+    protected List<Power> createPowers() {
+        List<Power> powers = new ArrayList<>();
+        powers = powersNew;
+
+        while(powers.size()>numberOfPowers){
+            int rem = rng.nextInt(powers.size()-1);
+            powers.remove(rem);
+        }
+
+
+        return powers;
     }
 
 
