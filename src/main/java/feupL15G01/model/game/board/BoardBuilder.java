@@ -5,19 +5,9 @@ import feupL15G01.model.game.elements.*;
 import java.util.List;
 
 public abstract class BoardBuilder {
-    public Board createBoard() {
-        Board board = new Board(getWidth(), getHeight());
 
-        board.setPlayer(createPlayer());
-        //board.setBomb(createBomb());
-        board.setEnemies(createEnemies());
-        board.setWalls(createWalls());
-        board.setFixBlocks(createFixBlocks());
-        board.setTempBlocks(createTempBlocks());
-        board.setPowers(createPowers());
+    public abstract Board createBoard();
 
-        return board;
-    }
 
     protected abstract int getWidth();
 

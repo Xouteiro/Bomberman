@@ -91,7 +91,12 @@ public class Board {
             if(fixBlock.getPosition().equals(position))
                 return false;
         }
-        return true;
+        for(TempBlock tempBlock : tempBlocks){
+            if(tempBlock.getPosition().equals(position)){
+                return false;
+            }
+        }
+            return true;
     }
 
     public boolean isEnemy(Position position) {
