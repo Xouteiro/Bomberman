@@ -89,22 +89,34 @@ public class RandomBoardBuilder extends BoardBuilder {
     @Override
     protected List<Power> createPowers() {
        List<Power> powers = new ArrayList<>();
-        for(int i = 1; i*2<width-2; i++){
-            for(int j = 1; j*2< height-2; j++){
-                powers.add(new Power(i*2 ,j*2));
+        for( int i = 2; i<=width-4; i++){
+            for( int j = 2; j<=height-4; j++){
+
+                if(i%2 == 0 && (i>4 || j>4)){
+                    powers.add(new Power(i , j ));
+                }
+                if(i%2==1 && (j-1)*2 <= height-4 && (i>4 || (j-1)*2 > 4)){
+                    powers.add(new Power(i, (j-1)*2));
+                }
+
             }
         }
-
-
         return powers;
     }
 
     @Override
     protected List<TempBlock> createTempBlocks() {
         List<TempBlock> tempBlocks = new ArrayList<>();
-        for(int i = 1; i*2<width-2; i++){
-            for(int j = 1; j*2< height-2; j++){
-                tempBlocks.add(new TempBlock(i*2,j*2));
+        for( int i = 2; i<=width-4; i++){
+            for( int j = 2; j<=height-4; j++){
+
+               if(i%2 == 0 && (i>4 || j>4)){
+                    tempBlocks.add(new TempBlock(i , j ));
+               }
+               if(i%2==1 && (j-1)*2 <= height-4 && (i>4 || (j-1)*2 > 4)){
+                tempBlocks.add(new TempBlock(i, (j-1)*2));
+               }
+
             }
         }
         return tempBlocks;

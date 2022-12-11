@@ -7,6 +7,6 @@ import feupL15G01.model.game.elements.Power;
 public class PowerViewer implements ElementViewer<Power>{
     @Override
     public void draw(Power power, GUI gui) {
-        //gui.drawPower(power.getPosition());
+        gui.drawPower(power.getPosition());
     }
 }
