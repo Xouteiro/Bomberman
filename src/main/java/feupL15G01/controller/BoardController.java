@@ -12,19 +12,22 @@ public class BoardController extends GameController {
     private final PlayerController playerController;
     private final EnemyController enemyController;
 
+    private final BombController bombController;
     public BoardController(Board board) {
         super(board);
 
         this.playerController = new PlayerController(board);
         this.enemyController = new EnemyController(board);
+        this.bombController = new BombController(board);
     }
 
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        if (action == GUI.ACTION.QUIT || getModel().getPlayer().getBombs() == 0) //getBombs tem que ser getlifes aqui
+        if (action == GUI.ACTION.QUIT || getModel().getPlayer().getBombs() == 0) //getBombs tem que ser getlives aqui
             game.setState(new MenuState(new Menu()));
         else {
             playerController.step(game, action, time);
             enemyController.step(game, action, time);
+            bombController.step(game,action,time);
         }
     }
 }

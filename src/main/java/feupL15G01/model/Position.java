@@ -26,7 +26,9 @@ public class Position {
     public Position getDown() {
         return new Position(x, y + 1);
     }
-
+    public Position goTo(int x, int y){
+        return new Position(x,y);
+    }
     public Position getRandomNeighbour() {
         int n = (int) (Math.random() * 4);
         switch (n) {
@@ -56,6 +58,7 @@ public class Position {
         Position position = (Position) o;
         return x == position.x && y == position.y;
     }
+
 
     @Override
     public int hashCode() {

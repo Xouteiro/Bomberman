@@ -6,6 +6,7 @@ import feupL15G01.model.game.elements.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Stack;
 
 public class RandomBoardBuilder extends BoardBuilder {
     private final Random rng;
@@ -38,6 +39,7 @@ public class RandomBoardBuilder extends BoardBuilder {
         Board board = new Board(getWidth(), getHeight());
 
         board.setPlayer(createPlayer());
+        board.setBomb(createBomb());
         board.setEnemies(createEnemies());
         board.setWalls(createWalls());
         board.setFixBlocks(createFixBlocks());
@@ -91,7 +93,11 @@ public class RandomBoardBuilder extends BoardBuilder {
         return new Player(2, 2);
     }
 
-    //protected Bomb createBomb() {return new Bomb()}
+
+    @Override
+    protected Bomb createBomb() {
+        return new Bomb(3,3);
+    }
     @Override
     protected List<FixBlock> createFixBlocks() {
         List<FixBlock> fixBlocks = new ArrayList<>();
@@ -133,8 +139,7 @@ public class RandomBoardBuilder extends BoardBuilder {
     }
     @Override
     protected List<Power> createPowers() {
-        List<Power> powers = new ArrayList<>();
-        powers = powersNew;
+        List<Power> powers = powersNew;
 
         while(powers.size()>numberOfPowers){
             int rem = rng.nextInt(powers.size()-1);

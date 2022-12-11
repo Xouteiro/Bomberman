@@ -35,9 +35,7 @@ public class PlayerController extends GameController {
     }
 
 
-    private void dropBomb(){
-        Bomb bomb = new Bomb(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY());
-    }
+
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) {
@@ -45,6 +43,6 @@ public class PlayerController extends GameController {
         if (action == GUI.ACTION.RIGHT) movePlayerRight();
         if (action == GUI.ACTION.DOWN) movePlayerDown();
         if (action == GUI.ACTION.LEFT) movePlayerLeft();
-        if (action == GUI.ACTION.SPACE) dropBomb();
+
     }
 }

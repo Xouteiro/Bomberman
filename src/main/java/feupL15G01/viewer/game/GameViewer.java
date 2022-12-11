@@ -16,12 +16,13 @@ public class GameViewer extends Viewer<Board> {
 
     @Override
     public void drawElements(GUI gui) {
+        drawElement(gui, getModel().getBomb(), new BombViewer());
         drawElement(gui, getModel().getPlayer(), new PlayerViewer());
         drawElements(gui, getModel().getWalls(), new WallViewer());
 
         drawElements(gui, getModel().getEnemies(), new EnemyViewer()); //erro inimigos nascerem fora
         drawElements(gui, getModel().getFixBlocks() , new FixBlockViewer());
-        //drawElement(gui, getModel().getBomb(), new BombViewer()); //temporario
+         //temporario
 
 
         drawElements(gui, getModel().getPowers(), new PowerViewer());

@@ -19,7 +19,7 @@ public abstract class BoardBuilder {
 
     protected abstract Player createPlayer();
 
-    //protected abstract Bomb createBomb();
+    protected abstract Bomb createBomb();
 
     protected abstract List<FixBlock> createFixBlocks();
 

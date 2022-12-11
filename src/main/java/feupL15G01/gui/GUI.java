@@ -28,5 +28,5 @@ public interface GUI {
 
     void close() throws IOException;
 
-    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, SPACE}
+    enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, BOMB}
 }

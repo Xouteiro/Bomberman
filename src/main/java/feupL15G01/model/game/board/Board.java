@@ -36,12 +36,18 @@ public class Board {
         return player;
     }
 
-    //public Bomb getBomb(){return bomb;}
+
     public void setPlayer(Player player) {
         this.player = player;
     }
 
-    //public void setBomb(Bomb bomb) {this.bomb = bomb;}
+    public Bomb getBomb() {
+        return bomb;
+    }
+
+    public void setBomb(Bomb bomb) {
+        this.bomb = bomb;
+    }
     public List<Enemy> getEnemies() {
         return enemies;
     }
@@ -105,4 +111,6 @@ public class Board {
                 return true;
         return false;
     }
+
+
 }
