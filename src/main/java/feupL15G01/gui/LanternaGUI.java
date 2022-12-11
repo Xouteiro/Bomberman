@@ -82,9 +82,18 @@ public class LanternaGUI implements GUI {
         if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'q' || keyStroke.getCharacter() == 'Q')) return ACTION.QUIT;
 
         if (keyStroke.getKeyType() == KeyType.ArrowUp) return ACTION.UP;
+        if(keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'w' || keyStroke.getCharacter() == 'W')) return ACTION.UP;
+
         if (keyStroke.getKeyType() == KeyType.ArrowRight) return ACTION.RIGHT;
+        if(keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'd' || keyStroke.getCharacter() == 'D')) return ACTION.RIGHT;
+
         if (keyStroke.getKeyType() == KeyType.ArrowDown) return ACTION.DOWN;
+        if(keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 's' || keyStroke.getCharacter() == 'S')) return ACTION.DOWN;
+
         if (keyStroke.getKeyType() == KeyType.ArrowLeft) return ACTION.LEFT;
+        if(keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'a' || keyStroke.getCharacter() == 'A')) return ACTION.LEFT;
+
+        if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'b' || keyStroke.getCharacter() == 'B')) return ACTION.BOMB;
 
         if (keyStroke.getKeyType() == KeyType.Enter) return ACTION.SELECT;
 
@@ -101,7 +110,7 @@ public class LanternaGUI implements GUI {
         drawCharacter(position.getX(),position.getY(), '.', "#888888","#000000");
     }
 
-    public void drawBomb(Position position) {drawCharacter(position.getX(), position.getY(), 'B', "#FFA500");}
+
     @Override
     public void drawWall(Position position) {
         drawCharacter(position.getX(), position.getY(), ']',"#211F23" ,"#524E56");
