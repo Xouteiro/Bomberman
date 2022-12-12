@@ -30,7 +30,7 @@ public class EnemyController extends GameController {
         if (getModel().isEmpty(position)) {
             enemy.setPosition(position);
             if (getModel().getPlayer().getPosition().equals(position))
-               getModel().getPlayer().removeLive();
+               getModel().getPlayer().removeLife();
 
         }
     }

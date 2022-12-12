@@ -16,8 +16,6 @@ public class MenuViewer extends Viewer<Menu> {
     public void drawElements(GUI gui) {
         gui.drawText(new Position(14, 14), "Menu", "#FFFFFF");
 
-
-
         for (int i = 0; i < getModel().getNumberEntries(); i++)
             gui.drawText(
                     new Position(14, 18 + i),

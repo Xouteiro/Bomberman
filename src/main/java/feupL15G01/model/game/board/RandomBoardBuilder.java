@@ -144,7 +144,6 @@ public class RandomBoardBuilder extends BoardBuilder {
             powers.remove(rem);
         }
 
-
         return powers;
     }
 

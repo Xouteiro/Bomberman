@@ -17,10 +17,10 @@ public class BombController extends GameController{
 
 
     private void dropBomb(){
-            getModel().getBomb().setPosition(getModel().getBomb().getPosition().goTo(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY()));
-            getModel().getPlayer().removeBomb();
-            final Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
+        getModel().getBomb().setPosition(getModel().getBomb().getPosition().goTo(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY()));
+        getModel().getPlayer().removeBomb();
+        final Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
                     for (int i = 0; i < getModel().getTempBlocks().size(); i++) {
@@ -34,7 +34,7 @@ public class BombController extends GameController{
                         }
                     }
                     if(getModel().isInRangeOf(getModel().getPlayer().getPosition(),getModel().getBomb().getPosition())){
-                        getModel().getPlayer().removeLive();
+                        getModel().getPlayer().removeLife();
                     }
                     getModel().getBomb().setPosition(getModel().getBomb().getPosition().goTo(3, 3));
                     getModel().getPlayer().addBomb();

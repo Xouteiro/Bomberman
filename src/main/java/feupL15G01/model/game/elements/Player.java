@@ -22,11 +22,11 @@ public class Player extends Element {
         return bombs;
     }
 
-    public void addLive(){
+    public void addLife(){
         this.lives ++;
     }
 
-    public void removeLive(){
+    public void removeLife(){
         this.lives --;
     }
 

@@ -114,6 +114,13 @@ public class Board {
         return false;
     }
 
+    public boolean isPower(Position position) {
+        for (Power power : powers)
+            if (power.getPosition().equals(position))
+                return true;
+        return false;
+    }
+
     public boolean isInRangeOf(Position elementPosition, Position bombPosition) {
         if ((elementPosition.getY() == bombPosition.getY() && bombPosition.getX() + bomb.getRange() == elementPosition.getX()) || (elementPosition.getX() == bombPosition.getX() - bomb.getRange() && elementPosition.getY() == bombPosition.getY()) ) {
             return true;
