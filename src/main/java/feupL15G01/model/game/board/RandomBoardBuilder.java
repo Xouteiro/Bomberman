@@ -17,6 +17,7 @@ public class RandomBoardBuilder extends BoardBuilder {
     private final int numberOfPowers;
 
     private List<Power> powersNew = new ArrayList<Power>();
+    private List<Door> possibleDoors = new ArrayList<Door>();
 
 
     public RandomBoardBuilder(int width, int height, int numberOfEnemies, int numberOfTempBlocks, int numberOfPowers) {
@@ -145,13 +146,24 @@ public class RandomBoardBuilder extends BoardBuilder {
             powers.remove(rem);
         }
 
+        for(int a = 0; a<powers.size(); a++){
+            Door toAdd = new Door(powers.get(a).getPosition().getX(),powers.get(a).getPosition().getY());
+            possibleDoors.add(toAdd);
+        }
+
 
         return powers;
     }
 
     @Override
     protected Door createDoor() {
-        return null;
+        List<Door> doors = possibleDoors;
+
+        while(doors.size()!=1){
+            int rem = rng.nextInt(doors.size()-1);
+            doors.remove(rem);
+        }
+        return doors.get(0);
     }
 
 
