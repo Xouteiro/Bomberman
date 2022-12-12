@@ -102,6 +102,9 @@ public class Board {
                 return false;
             }
         }
+        if(bomb.getPosition().equals(position)){
+                return false;
+            }
             return true;
     }
 
