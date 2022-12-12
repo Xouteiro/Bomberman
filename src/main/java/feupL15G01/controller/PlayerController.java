@@ -6,7 +6,8 @@ import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.Bomb;
 
-public class PlayerController extends GameController {
+public class
+PlayerController extends GameController {
     public PlayerController(Board board) {
         super(board);
     }
