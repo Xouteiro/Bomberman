@@ -6,15 +6,15 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 ### FEATURES IMPLEMENTADAS
 
+- **Poderes** - Vão-se encontrar escondidos nos blocos destrutíveis e irão permitir maior velocidade, passagem por cima das bombas, etc.
+- **Colocação de bombas** - A personagem vai colocar uma bomba no sítio onde se encontra ao premir a tecla do espaço.
+- **Derrotar os inimigos** - Se um inimigo estiver no alcance de uma bomba, vão ser derrotados.
+- **Explosão de blocos destrutíveis** - Se um destes blocos estiver no alcance de uma bomba, vão ser destruídos.
 
 
 ### FEATURES PLANEADAS
 
-- **Poderes** - Vão-se encontrar escondidos nos blocos destrutíveis e irão permitir maior velocidade, passagem por cima das bombas, etc.
-- **Colocação de bombas** - A personagem vai colocar uma bomba no sítio onde se encontra ao premir a tecla do espaço.
 - **Passagem de nível** - Este evento ocorre ao encontrar a porta escondida num dos blocos destrutíveis e todos os inimigos estarem derrotados.
-- **Derrotar os inimigos** - Se um inimigo estiver no alcance de uma bomba, vão ser derrotados.
-- **Explosão de blocos destrutíveis** - Se um destes blocos estiver no alcance de uma bomba, vão ser destruídos.
 
 ### FEATURES POSSÍVEIS
 
@@ -87,8 +87,6 @@ Dada a grande quantidade de código e diversas classes a utilizar ao todo, para 
 **Coverage testing**
 
 ![Coverage](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/coverageInterm.png) 
-
-**Mutation testing**
 
 ### AUTOAVALIAÇÃO
 
