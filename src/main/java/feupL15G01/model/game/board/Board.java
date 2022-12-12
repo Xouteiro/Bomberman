@@ -112,5 +112,15 @@ public class Board {
         return false;
     }
 
+    public boolean isInRangeOf(Position elementPosition, Position bombPosition) {
+        if ((elementPosition.getY() == bombPosition.getY() && bombPosition.getX() + bomb.getRange() == elementPosition.getX()) || (elementPosition.getX() == bombPosition.getX() - bomb.getRange() && elementPosition.getY() == bombPosition.getY()) ) {
+            return true;
+        }
+        if ((elementPosition.getX() == bombPosition.getX() && bombPosition.getY() + bomb.getRange() == elementPosition.getY()) || (elementPosition.getY() == bombPosition.getY() - bomb.getRange() && elementPosition.getX() == bombPosition.getX()) ) {
+            return true;
+        }
+        //só está implementado com range de 1
+        return false;
+    }
 
 }

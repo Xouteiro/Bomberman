@@ -3,10 +3,7 @@ package feupL15G01.model.game.board;
 
 import feupL15G01.model.game.elements.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Stack;
+import java.util.*;
 
 public class RandomBoardBuilder extends BoardBuilder {
     private final Random rng;
@@ -135,6 +132,7 @@ public class RandomBoardBuilder extends BoardBuilder {
             Power toAdd = new Power(tempBlocks.get(a).getPosition().getX(),tempBlocks.get(a).getPosition().getY());
             powersNew.add(toAdd);
         }
+
         return tempBlocks;
     }
     @Override
