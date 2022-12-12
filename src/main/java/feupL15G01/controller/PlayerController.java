@@ -6,7 +6,8 @@ import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.Bomb;
 
-public class PlayerController extends GameController {
+public class
+PlayerController extends GameController {
     public PlayerController(Board board) {
         super(board);
     }
@@ -30,7 +31,9 @@ public class PlayerController extends GameController {
     private void movePlayer(Position position) {
         if (getModel().isEmpty(position)) {
             getModel().getPlayer().setPosition(position);
-            //if (getModel().isEnemy(position)) //getModel().getPlayer().decreaselife();
+            if (getModel().isEnemy(position)){
+                getModel().getPlayer().removeLive();
+            }
         }
     }
 

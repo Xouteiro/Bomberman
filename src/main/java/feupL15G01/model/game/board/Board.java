@@ -11,7 +11,6 @@ public class Board {
     private final int height;
 
     private Player player;
-    //temporario
     private Bomb bomb;
     private List<Enemy> enemies;
     private List<Wall> walls;
@@ -130,6 +129,9 @@ public class Board {
             return true;
         }
         if ((elementPosition.getX() == bombPosition.getX() && bombPosition.getY() + bomb.getRange() == elementPosition.getY()) || (elementPosition.getY() == bombPosition.getY() - bomb.getRange() && elementPosition.getX() == bombPosition.getX()) ) {
+            return true;
+        }
+        if(elementPosition.getX()==bombPosition.getX() && elementPosition.getY()==bombPosition.getY()){
             return true;
         }
         //só está implementado com range de 1
