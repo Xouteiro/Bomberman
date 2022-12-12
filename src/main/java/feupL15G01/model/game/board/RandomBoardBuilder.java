@@ -42,6 +42,7 @@ public class RandomBoardBuilder extends BoardBuilder {
         board.setFixBlocks(createFixBlocks());
         board.setTempBlocks(createTempBlocks());
         board.setPowers(createPowers());
+        board.setDoor(createDoor());
 
         return board;
     }
@@ -146,6 +147,11 @@ public class RandomBoardBuilder extends BoardBuilder {
 
 
         return powers;
+    }
+
+    @Override
+    protected Door createDoor() {
+        return null;
     }
 
 

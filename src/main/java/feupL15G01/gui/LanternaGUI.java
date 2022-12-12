@@ -138,6 +138,11 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
+    public void drawDoor(Position position) {
+        drawCharacter(position.getX(), position.getY(),'D', "#CCC000", "#000000");
+    }
+
+    @Override
     public void drawText(Position position, String text, String color) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));

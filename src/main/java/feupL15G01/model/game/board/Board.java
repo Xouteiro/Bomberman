@@ -19,6 +19,8 @@ public class Board {
     private List<TempBlock> tempBlocks;
     private List<Power> powers;
 
+    private Door door;
+
     public Board(int width, int height) {
         this.width = width;
         this.height = height;
@@ -89,6 +91,14 @@ public class Board {
     public void setPowers(List<Power> powers) {
         this.powers = powers;
     }
+
+    public Door getDoor() {
+        return door;
+    }
+
+    public void setDoor(Door door) {
+        this.door = door;
+    }
     public boolean isEmpty(Position position) {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))
@@ -125,5 +135,6 @@ public class Board {
         //só está implementado com range de 1
         return false;
     }
+
 
 }

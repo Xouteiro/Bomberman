@@ -18,6 +18,7 @@ public class GameViewer extends Viewer<Board> {
     public void drawElements(GUI gui) {
 
         drawElements(gui, getModel().getPowers(), new PowerViewer());
+        drawElement(gui, getModel().getDoor(), new DoorViewer());
         drawElements(gui, getModel().getTempBlocks(), new TempBlockViewer());
         drawElements(gui, getModel().getWalls(), new WallViewer());
         drawElement(gui, getModel().getBomb(), new BombViewer());
