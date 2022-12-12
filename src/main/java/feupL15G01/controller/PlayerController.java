@@ -30,7 +30,9 @@ public class PlayerController extends GameController {
     private void movePlayer(Position position) {
         if (getModel().isEmpty(position)) {
             getModel().getPlayer().setPosition(position);
-            //if (getModel().isEnemy(position)) //getModel().getPlayer().decreaselife();
+            if (getModel().isEnemy(position)){
+                getModel().getPlayer().removeLive();
+            }
         }
     }
 

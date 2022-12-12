@@ -22,8 +22,12 @@ public class BoardController extends GameController {
     }
 
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        if (action == GUI.ACTION.QUIT || getModel().getPlayer().getBombs() == 0) //getBombs tem que ser getlives aqui
+        if (action == GUI.ACTION.QUIT ) //quando
             game.setState(new MenuState(new Menu()));
+        else if(getModel().getPlayer().getLives() == 0){
+            //adicionar ecra de game over
+            game.setState(new MenuState(new Menu()));
+        }
         else {
             playerController.step(game, action, time);
             enemyController.step(game, action, time);
