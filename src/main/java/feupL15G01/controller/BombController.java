@@ -38,6 +38,9 @@ public class BombController extends GameController{
                     }
                     getModel().getBomb().setPosition(getModel().getBomb().getPosition().goTo(3, 3));
                     getModel().getPlayer().addBomb();
+                    if(getModel().getEnemies().isEmpty()){
+                        getModel().getDoor().setAvailable();
+                    }
                     timer.cancel();
                 }
 

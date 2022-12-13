@@ -34,6 +34,9 @@ PlayerController extends GameController {
             if (getModel().isEnemy(position)){
                 getModel().getPlayer().removeLive();
             }
+            if(getModel().getDoor().getPosition()==getModel().getPlayer().getPosition() && getModel().getDoor().isAvailable()){
+                //go to new level
+            }
         }
     }
 

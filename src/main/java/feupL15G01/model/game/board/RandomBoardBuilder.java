@@ -159,11 +159,9 @@ public class RandomBoardBuilder extends BoardBuilder {
     protected Door createDoor() {
         List<Door> doors = possibleDoors;
 
-        while(doors.size()!=1){
-            int rem = rng.nextInt(doors.size()-1);
-            doors.remove(rem);
-        }
-        return doors.get(0);
+        int rem = rng.nextInt(doors.size()-1);
+
+        return doors.get(rem);
     }
 
 

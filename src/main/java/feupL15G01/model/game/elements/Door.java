@@ -13,10 +13,10 @@ public class Door extends TempBlock {
         return available;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable() {
         this.available = true;
     }
-    public void setNotAvailable(boolean available){
+    public void setNotAvailable(){
         this.available = false;
     }
 }
