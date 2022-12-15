@@ -2,15 +2,15 @@ package feupL15G01.controller;
 
 import feupL15G01.Game;
 import feupL15G01.gui.GUI;
-import feupL15G01.model.game.board.RandomBoardBuilder;
+import feupL15G01.model.menu.GameOver;
 import feupL15G01.model.menu.Menu;
-import feupL15G01.states.GameState;
+import feupL15G01.states.MenuState;
 
 import java.io.IOException;
 
-public class MenuController extends Controller<Menu> {
-    public MenuController(Menu menu) {
-        super(menu);
+public class GameOverController extends Controller<GameOver> {
+    public GameOverController(GameOver model) {
+        super(model);
     }
 
     @Override
@@ -24,9 +24,7 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedStart())
-                    game.setState(new GameState(new RandomBoardBuilder(32, 32, 4, 120, 15).createBoard()));
-                //
+                if (getModel().isSelectedBackToMainMenu()) game.setState(new MenuState(new Menu()));
         }
     }
 }

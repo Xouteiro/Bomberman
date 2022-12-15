@@ -27,4 +27,6 @@ public abstract class BoardBuilder {
 
     protected abstract List<Power> createPowers();
 
+    protected abstract Door createDoor();
+
 }

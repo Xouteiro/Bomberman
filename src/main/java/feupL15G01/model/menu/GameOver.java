@@ -3,12 +3,12 @@ package feupL15G01.model.menu;
 import java.util.Arrays;
 import java.util.List;
 
-public class Menu {
+public class GameOver {
     private final List<String> entries;
     private int currentEntry = 0;
 
-    public Menu() {
-        this.entries = Arrays.asList("Start", "Leave");
+    public GameOver() {
+        this.entries = Arrays.asList("Back to main menu", "Exit");
     }
 
     public void nextEntry() {
@@ -35,7 +35,7 @@ public class Menu {
         return isSelected(1);
     }
 
-    public boolean isSelectedStart() {
+    public boolean isSelectedBackToMainMenu() {
         return isSelected(0);
     }
 
@@ -43,3 +43,4 @@ public class Menu {
         return this.entries.size();
     }
 }
+

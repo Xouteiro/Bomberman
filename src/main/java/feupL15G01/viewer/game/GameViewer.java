@@ -18,6 +18,9 @@ public class GameViewer extends Viewer<Board> {
     public void drawElements(GUI gui) {
 
         drawElements(gui, getModel().getPowers(), new PowerViewer());
+        drawElement(gui, getModel().getDoor(), new DoorViewer());
+
+
         drawElements(gui, getModel().getTempBlocks(), new TempBlockViewer());
         drawElements(gui, getModel().getWalls(), new WallViewer());
         drawElement(gui, getModel().getBomb(), new BombViewer());
@@ -27,9 +30,26 @@ public class GameViewer extends Viewer<Board> {
         drawElement(gui, getModel().getPlayer(), new PlayerViewer());
 
 
-        gui.drawText(new Position(2, 1), "Bombs: " + getModel().getPlayer().getBombs(), "#FFD700");
-        gui.drawText(new Position(20,1), "Lives: " + getModel().getPlayer().getLives(), "#FFD700");
+
+        gui.drawText(new Position(1, 1),  ".: "+ getModel().getPlayer().getBombs()  , "#B8B4B6");
+
+        if(getModel().getPlayer().getLives() == 3) {
+            gui.drawText(new Position(27, 1), "*", "#F40E00");
+            gui.drawText(new Position(28, 1), "*", "#F40E00");
+            gui.drawText(new Position(29, 1), "*", "#F40E00");
+        }
+        if(getModel().getPlayer().getLives() == 2) {
+            gui.drawText(new Position(27, 1), "*", "#F40E00");
+            gui.drawText(new Position(28, 1), "*", "#F40E00");
+        }
+        if(getModel().getPlayer().getLives() == 1) {
+            gui.drawText(new Position(27, 1), "*" , "#F40E00");
+        }
+
+        gui.drawText(new Position(14, 1),"):" + getModel().getPlayer().getPoints() , "#DAA520");
+
         gui.drawText(new Position(20, 32), "Q to go back", "#FFFFFF");
+
 
     }
 

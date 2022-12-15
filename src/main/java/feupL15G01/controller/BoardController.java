@@ -3,8 +3,12 @@ package feupL15G01.controller;
 import feupL15G01.Game;
 import feupL15G01.gui.GUI;
 import feupL15G01.model.game.board.Board;
+import feupL15G01.model.menu.GameOver;
 import feupL15G01.model.menu.Menu;
+import feupL15G01.model.menu.Win;
+import feupL15G01.states.GameOverState;
 import feupL15G01.states.MenuState;
+import feupL15G01.states.WinState;
 
 import java.io.IOException;
 
@@ -22,12 +26,20 @@ public class BoardController extends GameController {
     }
 
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
-        if (action == GUI.ACTION.QUIT ) //quando
+        if (action == GUI.ACTION.QUIT ) {
             game.setState(new MenuState(new Menu()));
-        else if(getModel().getPlayer().getLives() == 0){
-            //adicionar ecra de game over
-            game.setState(new MenuState(new Menu()));
+            //game.setState(new GameOverState(new GameOver()));
+            //game.setState(new WinState(new Win()));
         }
+
+        else if(getModel().getPlayer().getPosition().equals(getModel().getDoor().getPosition()) && getModel().getDoor().isAvailable()){
+            game.setState(new WinState(new Win()));
+        }
+
+        else if(getModel().getPlayer().getLives() == 0){
+            game.setState(new GameOverState(new GameOver()));
+        }
+
         else {
             playerController.step(game, action, time);
             enemyController.step(game, action, time);
