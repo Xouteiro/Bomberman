@@ -71,7 +71,7 @@ public class MenuViewer extends Viewer<Menu> {
         for (int i = 0; i < getModel().getNumberEntries(); i++)
             gui.drawText(new Position(15-getModel().getEntry(i).length()/2, 23+(2*i)),
                     getModel().getEntry(i),
-                    getModel().isSelected(i) ? "#DAA520" : "#FFFFFF");
+                    getModel().isSelected(i) ? "#5a4cae" : "#FFFFFF");
 
     }
 }
