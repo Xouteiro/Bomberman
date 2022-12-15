@@ -5,6 +5,8 @@ import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.Bomb;
+import feupL15G01.model.menu.Win;
+import feupL15G01.states.WinState;
 
 public class
 PlayerController extends GameController {
@@ -34,9 +36,7 @@ PlayerController extends GameController {
             if (getModel().isEnemy(position)){
                 getModel().getPlayer().removeLive();
             }
-            if(getModel().getDoor().getPosition()==getModel().getPlayer().getPosition() && getModel().getDoor().isAvailable()){
-                //go to new level
-            }
+
         }
     }
 

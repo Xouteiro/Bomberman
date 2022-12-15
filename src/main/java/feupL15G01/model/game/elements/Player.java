@@ -5,6 +5,8 @@ public class Player extends Element {
     private int bombs;
     private int lives;
 
+    private int passThroughDoor = 0;
+
     public Player(int x, int y) {
         super(x, y);
         this.bombs = 1;
@@ -32,5 +34,13 @@ public class Player extends Element {
 
     public int getLives() {
         return lives;
+    }
+
+    public int getPassThroughDoor() {
+        return passThroughDoor;
+    }
+
+    public void setPassThroughDoor(int i) {
+        this.passThroughDoor = i;
     }
 }

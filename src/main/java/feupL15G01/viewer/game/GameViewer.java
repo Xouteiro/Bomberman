@@ -20,6 +20,7 @@ public class GameViewer extends Viewer<Board> {
         drawElements(gui, getModel().getPowers(), new PowerViewer());
         drawElement(gui, getModel().getDoor(), new DoorViewer());
 
+
         drawElements(gui, getModel().getTempBlocks(), new TempBlockViewer());
         drawElements(gui, getModel().getWalls(), new WallViewer());
         drawElement(gui, getModel().getBomb(), new BombViewer());
@@ -30,8 +31,8 @@ public class GameViewer extends Viewer<Board> {
 
 
 
-        gui.drawText(new Position(2, 1), "Bombs: " + getModel().getPlayer().getBombs(), "#FFD700");
-        gui.drawText(new Position(20,1), "Lives: " + getModel().getPlayer().getLives(), "#FFD700");
+        gui.drawText(new Position(2, 1), "Bombs: " + getModel().getPlayer().getBombs(), "#DAA520");
+        gui.drawText(new Position(20,1), "Lives: " + getModel().getPlayer().getLives(), "#DAA520");
         gui.drawText(new Position(20, 32), "Q to go back", "#FFFFFF");
 
     }
