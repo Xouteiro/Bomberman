@@ -26,11 +26,13 @@ public class BombController extends GameController{
                     for (int i = 0; i < getModel().getTempBlocks().size(); i++) {
                         if (getModel().isInRangeOf(getModel().getTempBlocks().get(i).getPosition(), getModel().getBomb().getPosition())) {
                             getModel().getTempBlocks().remove(i);
+                            getModel().getPlayer().incrementPoints(10);
                         }
                     }
                     for (int i = 0; i < getModel().getEnemies().size(); i++) {
                         if (getModel().isInRangeOf(getModel().getEnemies().get(i).getPosition(), getModel().getBomb().getPosition())) {
                             getModel().getEnemies().remove(i);
+                            getModel().getPlayer().incrementPoints(100);
                         }
                     }
                     if(getModel().isInRangeOf(getModel().getPlayer().getPosition(),getModel().getBomb().getPosition())){

@@ -5,6 +5,8 @@ public class Player extends Element {
     private int bombs;
     private int lives;
 
+    private int points;
+
     private int passThroughDoor = 0;
 
     public Player(int x, int y) {
@@ -42,5 +44,14 @@ public class Player extends Element {
 
     public void setPassThroughDoor(int i) {
         this.passThroughDoor = i;
+    }
+
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void incrementPoints(int points) {
+        this.points += points;
     }
 }
