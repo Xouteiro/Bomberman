@@ -35,8 +35,10 @@ public class BombController extends GameController{
                             getModel().getPlayer().incrementPoints(100);
                         }
                     }
-                    if(getModel().isInRangeOf(getModel().getPlayer().getPosition(),getModel().getBomb().getPosition())){
+                    if(getModel().isInRangeOf(getModel().getPlayer().getPosition(),getModel().getBomb().getPosition()) && !getModel().getPlayer().hasFlamePassAbility()){
                         getModel().getPlayer().removeLife();
+                        getModel().getPlayer().setFlamePassAbility(false);
+                        getModel().getPlayer().setTempBlockPassAbility(false);
                     }
                     getModel().getBomb().setPosition(getModel().getBomb().getPosition().goTo(3, 3));
                     getModel().getPlayer().addBomb();

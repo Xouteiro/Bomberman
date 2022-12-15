@@ -8,8 +8,12 @@ import feupL15G01.model.game.elements.Bomb;
 import feupL15G01.model.menu.Win;
 import feupL15G01.states.WinState;
 
+import java.util.Random;
+
 public class
 PlayerController extends GameController {
+
+
     public PlayerController(Board board) {
         super(board);
     }
@@ -31,17 +35,62 @@ PlayerController extends GameController {
     }
 
     private void movePlayer(Position position) {
+
         if (getModel().isEmpty(position)) {
             getModel().getPlayer().setPosition(position);
             if (getModel().isEnemy(position)) {
                 getModel().getPlayer().removeLife();
+                getModel().getPlayer().setTempBlockPassAbility(false);
+                getModel().getPlayer().setFlamePassAbility(false);
+                getModel().getPlayer().setBombPassAbility(false);
+
             }
-            if (getModel().isPower(position)) {
-                getModel().getPlayer().addLife();
-                for (int i = 0; i < getModel().getPowers().size(); i++) {
-                    getModel().getPowers().remove(i);
+            if (getModel().isLifePower(position)) {
+                for(int i = 0; i< getModel().getPowers().size(); i++){
+                    if(getModel().getPowers().get(i).getPosition().equals(position) && getModel().getPlayer().getLives()<3){
+                        getModel().getPowers().remove(i);
+                        getModel().getPlayer().addLife();
+                    }
                 }
             }
+            if (getModel().isPointsPower(position)) {
+                Random randomizer = new Random();
+                for(int i = 0; i< getModel().getPowers().size(); i++){
+                    if(getModel().getPowers().get(i).getPosition().equals(position)){
+                        getModel().getPowers().remove(i);
+                        getModel().getPlayer().incrementPoints(100 + randomizer.nextInt(400) );
+                    }
+                }
+            }
+            if (getModel().isBombPassPower(position)) {
+                for(int i = 0; i< getModel().getPowers().size(); i++){
+                    if(getModel().getPowers().get(i).getPosition().equals(position)){
+                        getModel().getPlayer().setBombPassAbility(true);
+                        getModel().getPowers().remove(i);
+
+                    }
+                }
+            }
+            if (getModel().isTempBlockPassPower(position)) {
+                for(int i = 0; i< getModel().getPowers().size(); i++){
+                    if(getModel().getPowers().get(i).getPosition().equals(position)){
+                        getModel().getPlayer().setTempBlockPassAbility(true);
+                        getModel().getPowers().remove(i);
+
+                    }
+                }
+            }
+            if (getModel().isFlamePassPower(position)) {
+                for(int i = 0; i< getModel().getPowers().size(); i++){
+                    if(getModel().getPowers().get(i).getPosition().equals(position)){
+                        getModel().getPlayer().setFlamePassAbility(true);
+                        getModel().getPowers().remove(i);
+
+                    }
+                }
+            }
+
+
 
         }
     }

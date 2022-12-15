@@ -4,11 +4,13 @@ import java.awt.*;
 public class Player extends Element {
     private int bombs;
     private int lives;
-
     private int points;
 
-    private int passThroughDoor = 0;
+    private boolean bombPassAbility = false;
 
+    private boolean tempBlockPassAbility = false;
+
+    private boolean flamePassAbility = false;
     public Player(int x, int y) {
         super(x, y);
         this.bombs = 1;
@@ -38,20 +40,35 @@ public class Player extends Element {
         return lives;
     }
 
-    public int getPassThroughDoor() {
-        return passThroughDoor;
-    }
-
-    public void setPassThroughDoor(int i) {
-        this.passThroughDoor = i;
-    }
-
-
     public int getPoints() {
         return points;
     }
 
     public void incrementPoints(int points) {
         this.points += points;
+    }
+
+    public boolean hasBombPassAbility() {
+        return bombPassAbility;
+    }
+
+    public void setBombPassAbility(boolean bombPassAbility) {
+        this.bombPassAbility = bombPassAbility;
+    }
+
+    public boolean hasTempBlockPassAbility() {
+        return tempBlockPassAbility;
+    }
+
+    public void setTempBlockPassAbility(boolean tempBlockPassAbility) {
+        this.tempBlockPassAbility = tempBlockPassAbility;
+    }
+
+    public boolean hasFlamePassAbility() {
+        return flamePassAbility;
+    }
+
+    public void setFlamePassAbility(boolean flamePassAbility) {
+        this.flamePassAbility = flamePassAbility;
     }
 }

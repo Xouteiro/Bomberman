@@ -7,6 +7,7 @@ import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.Element;
 import feupL15G01.viewer.Viewer;
 
+import javax.sql.rowset.spi.TransactionalWriter;
 import java.util.List;
 
 public class GameViewer extends Viewer<Board> {
@@ -16,8 +17,23 @@ public class GameViewer extends Viewer<Board> {
 
     @Override
     public void drawElements(GUI gui) {
-
-        drawElements(gui, getModel().getPowers(), new PowerViewer());
+        for (int i = 0; i < getModel().getPowers().size(); i++) {
+            if(getModel().getPowers().get(i).getType() ==1) {
+                drawElement(gui, getModel().getPowers().get(i), new LifePowerViewer());
+            }
+            if(getModel().getPowers().get(i).getType() ==2) {
+                drawElement(gui, getModel().getPowers().get(i), new PointsPowerViewer());
+            }
+            if(getModel().getPowers().get(i).getType() ==3) {
+                drawElement(gui, getModel().getPowers().get(i), new BombPassPowerViewer());
+            }
+            if(getModel().getPowers().get(i).getType() ==4) {
+                drawElement(gui, getModel().getPowers().get(i), new TempBlockPassPowerViewer());
+            }
+            if(getModel().getPowers().get(i).getType() ==5) {
+                drawElement(gui, getModel().getPowers().get(i), new FlamePassPowerViewer());
+            }
+        }
         drawElement(gui, getModel().getDoor(), new DoorViewer());
 
 
@@ -33,6 +49,8 @@ public class GameViewer extends Viewer<Board> {
 
         gui.drawText(new Position(1, 1),  ".: "+ getModel().getPlayer().getBombs()  , "#B8B4B6");
 
+        gui.drawText(new Position(14, 1),"):" + getModel().getPlayer().getPoints() , "#DAA520");
+
         if(getModel().getPlayer().getLives() == 3) {
             gui.drawText(new Position(27, 1), "*", "#F40E00");
             gui.drawText(new Position(28, 1), "*", "#F40E00");
@@ -46,9 +64,27 @@ public class GameViewer extends Viewer<Board> {
             gui.drawText(new Position(27, 1), "*" , "#F40E00");
         }
 
-        gui.drawText(new Position(14, 1),"):" + getModel().getPlayer().getPoints() , "#DAA520");
+
+        if(!getModel().getPlayer().hasBombPassAbility()) {
+            gui.drawText(new Position(1, 31), "B", "#B8B4B6");
+        }else{
+            gui.drawText(new Position(1, 31), "B", "#000000");
+        }
+        if(!getModel().getPlayer().hasTempBlockPassAbility()) {
+            gui.drawText(new Position(2, 31),  "T" , "#B8B4B6");
+        }else{
+            gui.drawText(new Position(2, 31),  "T" , "#000000");
+        }
+        if(!getModel().getPlayer().hasFlamePassAbility()) {
+            gui.drawText(new Position(3, 31),  "F" , "#B8B4B6");
+        }else{
+            gui.drawText(new Position(3, 31),  "F" , "#000000");
+        }
+
 
         gui.drawText(new Position(20, 32), "Q to go back", "#FFFFFF");
+
+
 
 
     }

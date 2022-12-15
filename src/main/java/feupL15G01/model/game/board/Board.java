@@ -102,19 +102,22 @@ public class Board {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))
                 return false;
-        for(FixBlock fixBlock : fixBlocks){
-            if(fixBlock.getPosition().equals(position))
+        for (FixBlock fixBlock : fixBlocks) {
+            if (fixBlock.getPosition().equals(position))
                 return false;
         }
-        for(TempBlock tempBlock : tempBlocks){
-            if(tempBlock.getPosition().equals(position)){
-                return false;
+        if(!getPlayer().hasTempBlockPassAbility()) {
+            for (TempBlock tempBlock : tempBlocks) {
+                if (tempBlock.getPosition().equals(position)) {
+                    return false;
+                }
             }
         }
-        if(bomb.getPosition().equals(position)){
-                return false;
-            }
+        if(!getPlayer().hasBombPassAbility()) {
+            return !bomb.getPosition().equals(position);
+        }
             return true;
+
     }
 
     public boolean isEnemy(Position position) {
@@ -124,9 +127,37 @@ public class Board {
         return false;
     }
 
-    public boolean isPower(Position position) {
+    public boolean isLifePower(Position position) {
         for (Power power : powers)
-            if (power.getPosition().equals(position))
+            if (power.getPosition().equals(position) && power.getType() == 1)
+                return true;
+        return false;
+    }
+
+    public boolean isPointsPower(Position position) {
+        for (Power power : powers)
+            if (power.getPosition().equals(position) && power.getType() == 2)
+                return true;
+        return false;
+    }
+
+    public boolean isBombPassPower(Position position) {
+        for (Power power : powers)
+            if (power.getPosition().equals(position) && power.getType() == 3)
+                return true;
+        return false;
+    }
+
+    public boolean isTempBlockPassPower(Position position) {
+        for (Power power : powers)
+            if (power.getPosition().equals(position) && power.getType() == 4)
+                return true;
+        return false;
+    }
+
+    public boolean isFlamePassPower(Position position) {
+        for (Power power : powers)
+            if (power.getPosition().equals(position) && power.getType() == 5)
                 return true;
         return false;
     }
@@ -142,7 +173,7 @@ public class Board {
         if(elementPosition.getX()==bombPosition.getX() && elementPosition.getY()==bombPosition.getY()){
             return true;
         }
-        //só está implementado com range de 1
+
         return false;
     }
 

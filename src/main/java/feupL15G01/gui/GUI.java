@@ -18,8 +18,6 @@ public interface GUI {
 
     void drawTempBlock(Position position);
 
-    void drawPower(Position position);
-
     void drawDoor(Position position);
 
     void drawText(Position position, String text, String color);
@@ -29,6 +27,17 @@ public interface GUI {
     void refresh() throws IOException;
 
     void close() throws IOException;
+
+    void drawLifePower(Position position);
+
+    void drawPointsPower(Position position);
+
+    void drawBombPassPower(Position position);
+
+    void drawTempBlockPassPower(Position position);
+
+    void drawFlamePassPower(Position position);
+
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, BOMB}
 }

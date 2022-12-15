@@ -132,6 +132,12 @@ public class RandomBoardBuilder extends BoardBuilder {
 
         for(int a = 0; a<tempBlocks.size(); a++){
             Power toAdd = new Power(tempBlocks.get(a).getPosition().getX(),tempBlocks.get(a).getPosition().getY());
+            int randomizer = rng.nextInt(100);
+            if(randomizer<40)toAdd.setType(1);
+            if(randomizer>40 && randomizer<70)toAdd.setType(2);
+            if(randomizer>70 && randomizer<80)toAdd.setType(3);
+            if(randomizer>80 && randomizer<90)toAdd.setType(4);
+            if(randomizer>90)toAdd.setType(5);
             powersNew.add(toAdd);
         }
 

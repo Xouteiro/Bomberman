@@ -1,6 +1,5 @@
 package feupL15G01.gui;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 
@@ -17,7 +16,6 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.net.URISyntaxException;
@@ -131,11 +129,33 @@ public class LanternaGUI implements GUI {
 
         drawCharacter(position.getX(), position.getY(), ']', "#3C3E3E","#a0522d");}
 
+    @Override
+    public void drawLifePower(Position position) {
+        drawCharacter(position.getX(), position.getY(), '*', "#F40E00","#000000");
+    }
+    @Override
+    public void drawPointsPower(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'P', "#959DA5","#000000");
+    }
 
     @Override
-    public void drawPower(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'P', "#CCC000","#000000");
+    public void drawBombPassPower(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'B', "#959DA5","#000000");
+
     }
+
+    @Override
+    public void drawTempBlockPassPower(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'T', "#959DA5","#000000");
+
+    }
+
+    @Override
+    public void drawFlamePassPower(Position position) {
+        drawCharacter(position.getX(), position.getY(), 'F', "#959DA5","#000000");
+
+    }
+
 
     @Override
     public void drawDoor(Position position) {
@@ -172,4 +192,6 @@ public class LanternaGUI implements GUI {
     public void close() throws IOException {
         screen.close();
     }
+
+
 }
