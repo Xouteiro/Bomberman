@@ -12,40 +12,43 @@ public class WinViewer extends Viewer<Win> {
 
     @Override
     protected void drawElements(GUI gui) {
-        gui.drawText(new Position(11, 12), ")", "#DAA520");
-        gui.drawText(new Position(12, 12), ".", "#959DA5");
-        gui.drawText(new Position(13, 12), ")", "#DAA520");
-        gui.drawText(new Position(14, 12), ".", "#959DA5");
-        gui.drawText(new Position(15, 12), ")", "#DAA520");
-        gui.drawText(new Position(16, 12), ".", "#959DA5");
-        gui.drawText(new Position(17, 12), ")", "#DAA520");
-        gui.drawText(new Position(18, 12), ".", "#959DA5");
-        gui.drawText(new Position(19, 12), ")", "#DAA520");
-        gui.drawText(new Position(20, 12), ".", "#959DA5");
+        gui.drawText(new Position(11, 5), ")", "#DAA520");
+        gui.drawText(new Position(12, 5), ".", "#959DA5");
+        gui.drawText(new Position(13, 5), ")", "#DAA520");
+        gui.drawText(new Position(14, 5), ".", "#959DA5");
+        gui.drawText(new Position(15, 5), ")", "#DAA520");
+        gui.drawText(new Position(16, 5), ".", "#959DA5");
+        gui.drawText(new Position(17, 5), ")", "#DAA520");
+        gui.drawText(new Position(18, 5), ".", "#959DA5");
+        gui.drawText(new Position(19, 5), ")", "#DAA520");
+        gui.drawText(new Position(20, 5), ".", "#959DA5");
 
-        gui.drawText(new Position(10,13),".", "#959DA5" );
-        gui.drawText(new Position(10, 14), ")", "#DAA520");
-        gui.drawText(new Position(10,15),".", "#959DA5" );
-
-
-        gui.drawText(new Position(12, 14), "You Win!", "#FFFFFF");
+        gui.drawText(new Position(10,6),".", "#959DA5" );
+        gui.drawText(new Position(10, 7), ")", "#DAA520");
+        gui.drawText(new Position(10,8),".", "#959DA5" );
 
 
+        gui.drawText(new Position(12, 7), "You Win!", "#FFFFFF");
 
-        gui.drawText(new Position(11, 16), ")", "#DAA520");
-        gui.drawText(new Position(12, 16), ".", "#959DA5");
-        gui.drawText(new Position(13, 16), ")", "#DAA520");
-        gui.drawText(new Position(14, 16), ".", "#959DA5");
-        gui.drawText(new Position(15, 16), ")", "#DAA520");
-        gui.drawText(new Position(16, 16), ".", "#959DA5");
-        gui.drawText(new Position(17, 16), ")", "#DAA520");
-        gui.drawText(new Position(18, 16), ".", "#959DA5");
-        gui.drawText(new Position(19, 16), ")", "#DAA520");
-        gui.drawText(new Position(20, 16), ".", "#959DA5");
 
-        gui.drawText(new Position(21, 13), ")", "#DAA520");
-        gui.drawText(new Position(21, 14), ".", "#959DA5");
-        gui.drawText(new Position(21, 15), ")", "#DAA520");
+
+        gui.drawText(new Position(11, 9), ")", "#DAA520");
+        gui.drawText(new Position(12, 9), ".", "#959DA5");
+        gui.drawText(new Position(13, 9), ")", "#DAA520");
+        gui.drawText(new Position(14, 9), ".", "#959DA5");
+        gui.drawText(new Position(15, 9), ")", "#DAA520");
+        gui.drawText(new Position(16, 9), ".", "#959DA5");
+        gui.drawText(new Position(17, 9), ")", "#DAA520");
+        gui.drawText(new Position(18, 9), ".", "#959DA5");
+        gui.drawText(new Position(19, 9), ")", "#DAA520");
+        gui.drawText(new Position(20, 9), ".", "#959DA5");
+
+        gui.drawText(new Position(21, 6), ")", "#DAA520");
+        gui.drawText(new Position(21, 7), ".", "#959DA5");
+        gui.drawText(new Position(21, 8), ")", "#DAA520");
+
+        gui.drawText(new Position(12, 13), ")points)", "#DAA520");
+        gui.drawText(new Position(15-String.valueOf(getModel().getPoints()).length()/2, 15), String.valueOf(getModel().getPoints()), "#DAA520");
 
 
 
@@ -60,6 +63,6 @@ public class WinViewer extends Viewer<Win> {
         for (int i = 0; i < getModel().getNumberEntries(); i++)
             gui.drawText(new Position(16-getModel().getEntry(i).length()/2, 19+2*i),
                     getModel().getEntry(i),
-                    getModel().isSelected(i) ? "#DAA520" : "#FFFFFF");
+                    getModel().isSelected(i) ? "#5a4cae" : "#FFFFFF");
     }
 }

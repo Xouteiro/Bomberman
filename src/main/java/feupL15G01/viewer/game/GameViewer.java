@@ -49,7 +49,7 @@ public class GameViewer extends Viewer<Board> {
 
         gui.drawText(new Position(1, 1),  ".: "+ getModel().getPlayer().getBombs()  , "#B8B4B6");
 
-        gui.drawText(new Position(14, 1),"):" + getModel().getPlayer().getPoints() , "#DAA520");
+        gui.drawText(new Position(8, 1),"):" + getModel().getPlayer().getPoints() , "#DAA520");
 
         if(getModel().getPlayer().getLives() == 3) {
             gui.drawText(new Position(27, 1), "*", "#F40E00");
@@ -66,19 +66,19 @@ public class GameViewer extends Viewer<Board> {
 
 
         if(!getModel().getPlayer().hasBombPassAbility()) {
-            gui.drawText(new Position(1, 31), "#", "#909090");
+            gui.drawText(new Position(19, 1), "#", "#909090");
         }else{
-            gui.drawText(new Position(1, 31), "#", "#FCE903");
+            gui.drawText(new Position(19, 1), "#", "#FCE903");
         }
         if(!getModel().getPlayer().hasTempBlockPassAbility()) {
-            gui.drawText(new Position(3, 31),  "$" , "#909090");
+            gui.drawText(new Position(21, 1),  "$" , "#909090");
         }else{
-            gui.drawText(new Position(3, 31),  "$" , "#FCE903");
+            gui.drawText(new Position(21, 1),  "$" , "#FCE903");
         }
         if(!getModel().getPlayer().hasFlamePassAbility()) {
-            gui.drawText(new Position(5, 31), "\"" , "#909090");
+            gui.drawText(new Position(23, 1), "\"" , "#909090");
         }else{
-            gui.drawText(new Position(5, 31),  "\"" , "#FCE903");
+            gui.drawText(new Position(23, 1),  "\"" , "#FCE903");
         }
 
 

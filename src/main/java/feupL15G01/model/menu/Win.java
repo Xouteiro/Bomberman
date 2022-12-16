@@ -7,7 +7,10 @@ public class Win {
     private final List<String> entries;
     private int currentEntry = 0;
 
-    public Win() {
+    private int points = 0;
+
+    public Win(int points) {
+        this.points = points;
         this.entries = Arrays.asList("Back to main menu", "Exit");
     }
 
@@ -42,5 +45,10 @@ public class Win {
     public int getNumberEntries() {
         return this.entries.size();
     }
+
+    public int getPoints() {
+        return points;
+    }
+
 }
 

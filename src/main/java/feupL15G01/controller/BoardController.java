@@ -30,7 +30,7 @@ public class BoardController extends GameController {
         if (action == GUI.ACTION.QUIT) {
             game.setState(new MenuState(new Menu()));
             //game.setState(new GameOverState(new GameOver()));
-            //game.setState(new WinState(new Win()));
+            //game.setState(new WinState(new Win(getModel().getPlayer().getPoints())));
         }
         else if (getModel().getPlayer().getPosition().equals(getModel().getDoor().getPosition()) && getModel().getDoor().isAvailable()) {
             int flag = 0;
@@ -45,7 +45,7 @@ public class BoardController extends GameController {
                         j++;
                     }
                     if (flag == 0) {
-                        game.setState(new WinState(new Win()));
+                        game.setState(new WinState(new Win(getModel().getPlayer().getPoints())));
                     }
                 }
             }
