@@ -104,6 +104,10 @@ public class LanternaGUI implements GUI {
     }
 
     @Override
+    public void drawPlayerOnTempBlocksViewer(Position position) {
+        drawCharacter(position.getX(),position.getY(), '&', "#192251","#a0522d");
+    }
+    @Override
     public void drawBomb(Position position) {
         drawCharacter(position.getX(),position.getY(), '.', "#959DA5","#000000");
     }
@@ -160,6 +164,8 @@ public class LanternaGUI implements GUI {
     public void drawExplosion(Position position) {
         drawCharacter(position.getX(), position.getY(), '%', "#ee272c","#000000");
     }
+
+
 
 
     @Override

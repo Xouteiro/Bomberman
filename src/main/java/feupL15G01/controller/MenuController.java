@@ -25,7 +25,7 @@ public class MenuController extends Controller<Menu> {
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
                 if (getModel().isSelectedStart())
-                    game.setState(new GameState(new RandomBoardBuilder(32, 32, 3, 100, 100).createBoard()));
+                    game.setState(new GameState(new RandomBoardBuilder(32, 32, 3,150 , 15).createBoard()));
 
         }
     }

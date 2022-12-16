@@ -40,6 +40,8 @@ public interface GUI {
 
     void drawExplosion(Position position);
 
+    void drawPlayerOnTempBlocksViewer(Position position);
+
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, BOMB}
 }

@@ -42,12 +42,19 @@ public class GameViewer extends Viewer<Board> {
 
 
         drawElements(gui, getModel().getTempBlocks(), new TempBlockViewer());
+
         drawElements(gui, getModel().getWalls(), new WallViewer());
         drawElement(gui, getModel().getBomb(), new BombViewer());
         drawElements(gui, getModel().getEnemies(), new EnemyViewer());
         drawElements(gui, getModel().getFixBlocks() , new FixBlockViewer());
 
-        drawElement(gui, getModel().getPlayer(), new PlayerViewer());
+        if(!getModel().getPlayer().isOnTopOfTempBlock()) {
+            drawElement(gui, getModel().getPlayer(), new PlayerViewer());
+        }else{
+            drawElement(gui, getModel().getPlayer(), new PlayerOnTempBlocksViewer());
+        }
+
+
 
 
 

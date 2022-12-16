@@ -11,6 +11,8 @@ public class Player extends Element {
     private boolean tempBlockPassAbility = false;
 
     private boolean flamePassAbility = false;
+
+    private boolean isOnTopOfTempBlock = false;
     public Player(int x, int y) {
         super(x, y);
         this.bombs = 1;
@@ -70,5 +72,13 @@ public class Player extends Element {
 
     public void setFlamePassAbility(boolean flamePassAbility) {
         this.flamePassAbility = flamePassAbility;
+    }
+
+    public boolean isOnTopOfTempBlock() {
+        return isOnTopOfTempBlock;
+    }
+
+    public void setOnTopOfTempBlock(boolean onTopOfTempBlock) {
+        isOnTopOfTempBlock = onTopOfTempBlock;
     }
 }

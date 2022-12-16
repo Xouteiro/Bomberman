@@ -38,12 +38,17 @@ PlayerController extends GameController {
 
         if (getModel().isEmptyForPlayer(position)) {
             getModel().getPlayer().setPosition(position);
+            getModel().getPlayer().setOnTopOfTempBlock(false);
             if (getModel().isEnemy(position)) {
                 getModel().getPlayer().removeLife();
                 getModel().getPlayer().setTempBlockPassAbility(false);
                 getModel().getPlayer().setFlamePassAbility(false);
                 getModel().getPlayer().setBombPassAbility(false);
 
+            }
+
+            if(getModel().isTempBlock(position)){
+                getModel().getPlayer().setOnTopOfTempBlock(true);
             }
             if (getModel().isLifePower(position)) {
                 int flag = 0;

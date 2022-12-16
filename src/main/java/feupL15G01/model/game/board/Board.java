@@ -157,6 +157,15 @@ public class Board {
         return false;
     }
 
+    public boolean isTempBlock(Position position){
+        for(TempBlock tempBlock: tempBlocks){
+            if(tempBlock.getPosition().equals(position)){
+                return true;
+            }
+
+        }
+        return false;
+    }
     public boolean isLifePower(Position position) {
         for (Power power : powers)
             if (power.getPosition().equals(position) && power.getType() == 1)
