@@ -6,19 +6,16 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 ### FEATURES IMPLEMENTADAS
 
-- **Poderes** - Vão-se encontrar escondidos nos blocos destrutíveis e irão permitir maior velocidade, passagem por cima das bombas, etc.
+- **Poderes** - Vão-se encontrar escondidos nos blocos destrutíveis e irão permitir imunidade a explosões, assim como passagem por cima de bombas e blocos.
 - **Colocação de bombas** - A personagem vai colocar uma bomba no sítio onde se encontra ao premir a tecla do espaço.
 - **Derrotar os inimigos** - Se um inimigo estiver no alcance de uma bomba, vão ser derrotados.
 - **Explosão de blocos destrutíveis** - Se um destes blocos estiver no alcance de uma bomba, vão ser destruídos.
-
+- **Vitória no jogo** - Este evento ocorre ao encontrar a porta escondida num dos blocos destrutíveis e todos os inimigos estarem derrotados.
+- **Colisões** - O jogador irá colidir com as paredes exteriores e blocos fixos quando se mover na direção deles.
 
 ### FEATURES PLANEADAS
 
-- **Passagem de nível** - Este evento ocorre ao encontrar a porta escondida num dos blocos destrutíveis e todos os inimigos estarem derrotados.
-
-### FEATURES POSSÍVEIS
-
-- **Items bónus** - Items raros desbloqueados pela conquista de pontos
+- Foram implementadas todas as *features* que se pretendia obrigatoriamente ter concluídas aquando do começo do projeto.
 
 ### MOCKUPS
 
@@ -61,6 +58,7 @@ As classes relacionadas são as apresentadas abaixo e estão contidas nos fichei
 - [Enemy](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Enemy.java)
 - [Power](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Power.java)
 - [Wall](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Wall.java)
+- [Bomb](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/model/game/elements/Bomb.java)
 
 **Consequências**
 
