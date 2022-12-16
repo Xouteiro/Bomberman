@@ -29,13 +29,10 @@ public class BoardController extends GameController {
     public void step(Game game, GUI.ACTION action, long time) throws IOException {
         if (action == GUI.ACTION.QUIT) {
             game.setState(new MenuState(new Menu()));
-            //game.setState(new GameOverState(new GameOver()));
-            //game.setState(new WinState(new Win(getModel().getPlayer().getPoints())));
         }
         else if (getModel().getPlayer().getPosition().equals(getModel().getDoor().getPosition()) && getModel().getDoor().isAvailable()) {
             int flag = 0;
             for (int i = 0; i < getModel().getPowers().size(); i++) {
-                if (getModel().getPowers().get(i).getPosition().equals(getModel().getPlayer().getPosition())) {
                     int j = 0;
                     while (j < getModel().getTempBlocks().size()) {
                         if (getModel().getTempBlocks().get(j).getPosition().equals(getModel().getPlayer().getPosition())) {
@@ -47,7 +44,7 @@ public class BoardController extends GameController {
                     if (flag == 0) {
                         game.setState(new WinState(new Win(getModel().getPlayer().getPoints())));
                     }
-                }
+
             }
         }
         else if (getModel().getPlayer().getLives() == 0) {
