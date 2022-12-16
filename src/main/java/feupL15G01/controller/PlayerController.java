@@ -46,46 +46,100 @@ PlayerController extends GameController {
 
             }
             if (getModel().isLifePower(position)) {
+                int flag = 0;
                 for(int i = 0; i< getModel().getPowers().size(); i++){
                     if(getModel().getPowers().get(i).getPosition().equals(position) && getModel().getPlayer().getLives()<3){
-                        getModel().getPowers().remove(i);
-                        getModel().getPlayer().addLife();
+                        int j = 0;
+                        while(j<getModel().getTempBlocks().size()){
+                            if (getModel().getTempBlocks().get(j).getPosition().equals(position)) {
+                                flag = 1;
+                                break;
+                            }
+                            j++;
+                        }
+                        if(flag==0){
+                            getModel().getPlayer().addLife();
+                            getModel().getPowers().remove(i);
+                        }
+
                     }
                 }
             }
             if (getModel().isPointsPower(position)) {
                 Random randomizer = new Random();
+                int flag = 0;
                 for(int i = 0; i< getModel().getPowers().size(); i++){
                     if(getModel().getPowers().get(i).getPosition().equals(position)){
-                        getModel().getPowers().remove(i);
-                        getModel().getPlayer().incrementPoints(100 + randomizer.nextInt(400) );
+                        int j = 0;
+                        while(j<getModel().getTempBlocks().size()){
+                            if (getModel().getTempBlocks().get(j).getPosition().equals(position)) {
+                                flag = 1;
+                                break;
+                            }
+                            j++;
+                        }
+                        if(flag==0){
+                            getModel().getPlayer().incrementPoints(100 + randomizer.nextInt(400));
+                            getModel().getPowers().remove(i);
+                        }
+
                     }
                 }
             }
             if (getModel().isBombPassPower(position)) {
-                for(int i = 0; i< getModel().getPowers().size(); i++){
-                    if(getModel().getPowers().get(i).getPosition().equals(position)){
-                        getModel().getPlayer().setBombPassAbility(true);
-                        getModel().getPowers().remove(i);
-
+                int flag = 0;
+                for (int i = 0; i < getModel().getPowers().size(); i++) {
+                    if (getModel().getPowers().get(i).getPosition().equals(position)) {
+                        int j = 0;
+                        while (j < getModel().getTempBlocks().size()) {
+                            if (getModel().getTempBlocks().get(j).getPosition().equals(position)) {
+                                flag = 1;
+                                break;
+                            }
+                            j++;
+                        }
+                        if (flag == 0) {
+                            getModel().getPlayer().setBombPassAbility(true);
+                            getModel().getPowers().remove(i);
+                        }
                     }
                 }
             }
             if (getModel().isTempBlockPassPower(position)) {
-                for(int i = 0; i< getModel().getPowers().size(); i++){
-                    if(getModel().getPowers().get(i).getPosition().equals(position)){
-                        getModel().getPlayer().setTempBlockPassAbility(true);
-                        getModel().getPowers().remove(i);
-
+                int flag = 0;
+                for (int i = 0; i < getModel().getPowers().size(); i++) {
+                    if (getModel().getPowers().get(i).getPosition().equals(position)) {
+                        int j = 0;
+                        while (j < getModel().getTempBlocks().size()) {
+                            if (getModel().getTempBlocks().get(j).getPosition().equals(position)) {
+                                flag = 1;
+                                break;
+                            }
+                            j++;
+                        }
+                        if (flag == 0) {
+                            getModel().getPlayer().setTempBlockPassAbility(true);
+                            getModel().getPowers().remove(i);
+                        }
                     }
                 }
             }
             if (getModel().isFlamePassPower(position)) {
-                for(int i = 0; i< getModel().getPowers().size(); i++){
-                    if(getModel().getPowers().get(i).getPosition().equals(position)){
-                        getModel().getPlayer().setFlamePassAbility(true);
-                        getModel().getPowers().remove(i);
-
+                int flag = 0;
+                for (int i = 0; i < getModel().getPowers().size(); i++) {
+                    if (getModel().getPowers().get(i).getPosition().equals(position)) {
+                        int j = 0;
+                        while (j < getModel().getTempBlocks().size()) {
+                            if (getModel().getTempBlocks().get(j).getPosition().equals(position)) {
+                                flag = 1;
+                                break;
+                            }
+                            j++;
+                        }
+                        if (flag == 0) {
+                            getModel().getPlayer().setTempBlockPassAbility(true);
+                            getModel().getPowers().remove(i);
+                        }
                     }
                 }
             }

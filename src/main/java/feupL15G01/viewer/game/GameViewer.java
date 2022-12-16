@@ -66,19 +66,19 @@ public class GameViewer extends Viewer<Board> {
 
 
         if(!getModel().getPlayer().hasBombPassAbility()) {
-            gui.drawText(new Position(1, 31), "B", "#B8B4B6");
+            gui.drawText(new Position(1, 31), "#", "#909090");
         }else{
-            gui.drawText(new Position(1, 31), "B", "#000000");
+            gui.drawText(new Position(1, 31), "#", "#FCE903");
         }
         if(!getModel().getPlayer().hasTempBlockPassAbility()) {
-            gui.drawText(new Position(2, 31),  "T" , "#B8B4B6");
+            gui.drawText(new Position(3, 31),  "$" , "#909090");
         }else{
-            gui.drawText(new Position(2, 31),  "T" , "#000000");
+            gui.drawText(new Position(3, 31),  "$" , "#FCE903");
         }
         if(!getModel().getPlayer().hasFlamePassAbility()) {
-            gui.drawText(new Position(3, 31),  "F" , "#B8B4B6");
+            gui.drawText(new Position(5, 31), "\"" , "#909090");
         }else{
-            gui.drawText(new Position(3, 31),  "F" , "#000000");
+            gui.drawText(new Position(5, 31),  "\"" , "#FCE903");
         }
 
 

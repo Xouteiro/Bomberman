@@ -135,24 +135,24 @@ public class LanternaGUI implements GUI {
     }
     @Override
     public void drawPointsPower(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'P', "#959DA5","#000000");
+        drawCharacter(position.getX(), position.getY(), ')', "#DAA520","#000000");
     }
 
     @Override
     public void drawBombPassPower(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'B', "#959DA5","#000000");
+        drawCharacter(position.getX(), position.getY(), '#', "#FCE903","#000000");
 
     }
 
     @Override
     public void drawTempBlockPassPower(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'T', "#959DA5","#000000");
+        drawCharacter(position.getX(), position.getY(), '$', "#FCE903","#000000");
 
     }
 
     @Override
     public void drawFlamePassPower(Position position) {
-        drawCharacter(position.getX(), position.getY(), 'F', "#959DA5","#000000");
+        drawCharacter(position.getX(), position.getY(), '\"', "#FCE903","#000000");
 
     }
 
