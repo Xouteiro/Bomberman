@@ -12,6 +12,8 @@ public class Board {
 
     private Player player;
     private Bomb bomb;
+
+    private List<Explosion> explosions;
     private List<Enemy> enemies;
     private List<Wall> walls;
     private List<FixBlock> fixBlocks;
@@ -48,6 +50,14 @@ public class Board {
 
     public void setBomb(Bomb bomb) {
         this.bomb = bomb;
+    }
+
+    public List<Explosion> getExplosions() {
+        return explosions;
+    }
+
+    public void setExplosions(List<Explosion> explosions) {
+        this.explosions = explosions;
     }
     public List<Enemy> getEnemies() {
         return enemies;
@@ -176,7 +186,6 @@ public class Board {
 
         return false;
     }
-
 
 
 

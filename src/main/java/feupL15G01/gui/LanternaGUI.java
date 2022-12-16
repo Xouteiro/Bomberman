@@ -156,6 +156,11 @@ public class LanternaGUI implements GUI {
 
     }
 
+    @Override
+    public void drawExplosion(Position position) {
+        drawCharacter(position.getX(), position.getY(), '%', "#ee272c","#000000");
+    }
+
 
     @Override
     public void drawDoor(Position position) {

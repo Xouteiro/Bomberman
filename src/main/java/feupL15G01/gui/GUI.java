@@ -38,6 +38,8 @@ public interface GUI {
 
     void drawFlamePassPower(Position position);
 
+    void drawExplosion(Position position);
+
 
     enum ACTION {UP, RIGHT, DOWN, LEFT, NONE, QUIT, SELECT, BOMB}
 }

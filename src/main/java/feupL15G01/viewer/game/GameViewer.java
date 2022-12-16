@@ -17,6 +17,9 @@ public class GameViewer extends Viewer<Board> {
 
     @Override
     public void drawElements(GUI gui) {
+
+
+
         for (int i = 0; i < getModel().getPowers().size(); i++) {
             if(getModel().getPowers().get(i).getType() ==1) {
                 drawElement(gui, getModel().getPowers().get(i), new LifePowerViewer());
@@ -34,6 +37,7 @@ public class GameViewer extends Viewer<Board> {
                 drawElement(gui, getModel().getPowers().get(i), new FlamePassPowerViewer());
             }
         }
+        drawElements(gui,getModel().getExplosions(), new ExplosionViewer());
         drawElement(gui, getModel().getDoor(), new DoorViewer());
 
 

@@ -38,6 +38,7 @@ public class RandomBoardBuilder extends BoardBuilder {
 
         board.setPlayer(createPlayer());
         board.setBomb(createBomb());
+        board.setExplosions(createExplosions());
         board.setEnemies(createEnemies());
         board.setWalls(createWalls());
         board.setFixBlocks(createFixBlocks());
@@ -167,6 +168,17 @@ public class RandomBoardBuilder extends BoardBuilder {
         int rem = rng.nextInt(doors.size()-1);
 
         return doors.get(rem);
+    }
+
+    protected List<Explosion> createExplosions(){
+        List<Explosion> explosions = new ArrayList<Explosion>();
+
+        for(int i = 0; i<5;i++) {
+            explosions.add(new Explosion(3, 3));
+        }
+
+
+        return explosions;
     }
 
 
