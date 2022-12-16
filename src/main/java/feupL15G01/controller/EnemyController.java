@@ -27,7 +27,7 @@ public class EnemyController extends GameController {
     }
 
     private void moveEnemy(Enemy enemy, Position position) {
-        if (getModel().isEmpty(position)) {
+        if (getModel().isEmptyForEnemy(position)) {
             enemy.setPosition(position);
             if (getModel().getPlayer().getPosition().equals(position))
                getModel().getPlayer().removeLife();

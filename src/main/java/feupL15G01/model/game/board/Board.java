@@ -108,7 +108,7 @@ public class Board {
     public void setDoor(Door door) {
         this.door = door;
     }
-    public boolean isEmpty(Position position) {
+    public boolean isEmptyForPlayer(Position position) {
         for (Wall wall : walls)
             if (wall.getPosition().equals(position))
                 return false;
@@ -127,6 +127,26 @@ public class Board {
             return !bomb.getPosition().equals(position);
         }
             return true;
+
+    }
+
+    public boolean isEmptyForEnemy(Position position){
+        for (Wall wall : walls)
+            if (wall.getPosition().equals(position))
+                return false;
+        for(FixBlock fixBlock : fixBlocks){
+            if(fixBlock.getPosition().equals(position))
+                return false;
+        }
+        for(TempBlock tempBlock : tempBlocks){
+            if(tempBlock.getPosition().equals(position)){
+                return false;
+            }
+        }
+        if(bomb.getPosition().equals(position)){
+            return false;
+        }
+        return true;
 
     }
 

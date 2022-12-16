@@ -36,7 +36,7 @@ PlayerController extends GameController {
 
     private void movePlayer(Position position) {
 
-        if (getModel().isEmpty(position)) {
+        if (getModel().isEmptyForPlayer(position)) {
             getModel().getPlayer().setPosition(position);
             if (getModel().isEnemy(position)) {
                 getModel().getPlayer().removeLife();
@@ -137,7 +137,7 @@ PlayerController extends GameController {
                             j++;
                         }
                         if (flag == 0) {
-                            getModel().getPlayer().setTempBlockPassAbility(true);
+                            getModel().getPlayer().setFlamePassAbility(true);
                             getModel().getPowers().remove(i);
                         }
                     }
