@@ -58,16 +58,16 @@ public class BombController extends GameController{
                 getModel().getDoor().setAvailable();
             }
 
-
+            CompletableFuture.delayedExecutor(300, TimeUnit.MILLISECONDS).execute(() -> {
+                getModel().getExplosions().get(0).setPosition(new Position(3,3));
+                getModel().getExplosions().get(1).setPosition(new Position(3,3));
+                getModel().getExplosions().get(2).setPosition(new Position(3,3));
+                getModel().getExplosions().get(3).setPosition(new Position(3,3));
+                getModel().getExplosions().get(4).setPosition(new Position(3,3));
+            });
         });
 
-        CompletableFuture.delayedExecutor(1800, TimeUnit.MILLISECONDS).execute(() -> {
-            getModel().getExplosions().get(0).setPosition(new Position(3,3));
-            getModel().getExplosions().get(1).setPosition(new Position(3,3));
-            getModel().getExplosions().get(2).setPosition(new Position(3,3));
-            getModel().getExplosions().get(3).setPosition(new Position(3,3));
-            getModel().getExplosions().get(4).setPosition(new Position(3,3));
-        });
+
 
     }
     @Override
