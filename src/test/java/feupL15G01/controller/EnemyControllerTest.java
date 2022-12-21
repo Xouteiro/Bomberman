@@ -3,6 +3,7 @@ import feupL15G01.Game;
 import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
+import feupL15G01.model.game.elements.Bomb;
 import feupL15G01.model.game.elements.Enemy;
 import feupL15G01.model.game.elements.Player;
 import feupL15G01.model.game.elements.Wall;
@@ -22,6 +23,8 @@ class EnemyControllerTest {
     private Board board;
     private Game game;
 
+    private Bomb bomb;
+
     @BeforeEach
     void setUp() {
         board = new Board(10, 10);
@@ -29,9 +32,14 @@ class EnemyControllerTest {
         player = new Player(5, 5);
         board.setPlayer(player);
 
+        bomb = new Bomb(9,9);
+        board.setBomb(bomb);
+
         board.setWalls(Arrays.asList());
         board.setEnemies(Arrays.asList());
         board.setFixBlocks(Arrays.asList());
+        board.setTempBlocks(Arrays.asList());
+        board.setPowers(Arrays.asList());
 
         controller = new EnemyController(board);
 

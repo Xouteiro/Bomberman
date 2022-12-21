@@ -5,7 +5,6 @@ import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.*;
 import feupL15G01.viewer.game.GameViewer;
-import feupL15G01.viewer.game.TempBlockViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -26,10 +25,11 @@ class BoardViewerTest {
 
         board.setWalls(Arrays.asList(new Wall(1, 2), new Wall(2, 3), new Wall(3, 4)));
         board.setEnemies(Arrays.asList(new Enemy(4, 5), new Enemy(5, 6)));
-        board.setPlayer(new Player(5, 8));
-        board.setFixBlocks(Arrays.asList(new FixBlock(2, 2), new FixBlock(3, 3), new FixBlock(4, 4)));
-        board.setTempBlocks(Arrays.asList(new TempBlock(2, 3), new TempBlock(3, 4), new TempBlock(4, 5)));
-        board.setPowers(Arrays.asList(new Power(2, 1), new Power(3, 2), new Power(4, 3)));
+        board.setPlayer(new Player(5, 4));
+        board.setFixBlocks(Arrays.asList(new FixBlock(5,8)));
+        board.setTempBlocks(Arrays.asList(new TempBlock(6,9)));
+        board.setPowers(Arrays.asList(new Power(3,6)));
+        board.setBomb(new Bomb(1,3));
     }
 
 
@@ -56,19 +56,41 @@ class BoardViewerTest {
     void drawPlayer() throws IOException {
         viewer.draw(gui);
 
-        Mockito.verify(gui, Mockito.times(1)).drawPlayer(new Position(5, 8));
+        Mockito.verify(gui, Mockito.times(1)).drawPlayer(new Position(5, 4));
         Mockito.verify(gui, Mockito.times(1)).drawPlayer(Mockito.any(Position.class));
+    }
+
+    @Test
+    void drawFixBlock() throws IOException {
+        viewer.draw(gui);
+
+        Mockito.verify(gui, Mockito.times(1)).drawFixBlock(new Position(5, 8));
+        Mockito.verify(gui, Mockito.times(1)).drawFixBlock(Mockito.any(Position.class));
+    }
+
+    @Test
+    void drawTempBlock() throws IOException {
+        viewer.draw(gui);
+
+        Mockito.verify(gui, Mockito.times(1)).drawTempBlock(new Position(6, 9));
+        Mockito.verify(gui, Mockito.times(1)).drawTempBlock(Mockito.any(Position.class));
     }
 
     @Test
     void drawPower() throws IOException {
         viewer.draw(gui);
 
-        Mockito.verify(gui, Mockito.times(1)).drawPlayer(new Position(5, 8));
-        Mockito.verify(gui, Mockito.times(1)).drawPlayer(Mockito.any(Position.class));
+        Mockito.verify(gui, Mockito.times(1)).drawLifePower(new Position(3, 6));
+        Mockito.verify(gui, Mockito.times(1)).drawLifePower(Mockito.any(Position.class));
     }
 
+    @Test
+    void drawBomb() throws IOException {
+        viewer.draw(gui);
 
+        Mockito.verify(gui, Mockito.times(1)).drawBomb(new Position(1, 3));
+        Mockito.verify(gui, Mockito.times(1)).drawBomb(Mockito.any(Position.class));
+    }
 
     @Test
     void refreshAndClear() throws IOException {

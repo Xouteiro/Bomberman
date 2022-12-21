@@ -30,8 +30,8 @@ class LanternaGUITest {
     void drawPlayer() {
         gui.drawPlayer(new Position(1, 1));
 
-        Mockito.verify(tg, Mockito.times(1)).setForegroundColor(new TextColor.RGB(255, 215, 0));
-        Mockito.verify(tg, Mockito.times(1)).putString(1, 2, "H");
+        Mockito.verify(tg, Mockito.times(1)).setForegroundColor(new TextColor.RGB(39, 53, 126));
+        Mockito.verify(tg, Mockito.times(1)).putString(1, 2, "&");
     }
 
     @Test
