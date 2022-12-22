@@ -7,7 +7,7 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 ### FEATURES IMPLEMENTADAS
 
 - **Poderes** - Vão-se encontrar escondidos nos blocos destrutíveis e irão permitir imunidade a explosões, assim como passagem por cima de bombas e blocos.
-- **Colocação de bombas** - A personagem vai colocar uma bomba no sítio onde se encontra ao premir a tecla do espaço.
+- **Colocação de bombas** - A personagem vai colocar uma bomba no sítio onde se encontra ao premir a tecla "b".
 - **Derrotar os inimigos** - Se um inimigo estiver no alcance de uma bomba, vão ser derrotados.
 - **Explosão de blocos destrutíveis** - Se um destes blocos estiver no alcance de uma bomba, vão ser destruídos.
 - **Vitória no jogo** - Este evento ocorre ao encontrar a porta escondida num dos blocos destrutíveis e todos os inimigos estarem derrotados.
@@ -78,7 +78,7 @@ Dada a grande quantidade de código e diversas classes a utilizar ao todo, para 
 
 **Diagrama de classes UML**
 
-![Diagram](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/diagram.png) 
+![Diagram](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/diagram_2.png) 
 
 ### TESTAGEM
 

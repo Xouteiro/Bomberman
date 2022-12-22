@@ -3,7 +3,9 @@ package feupL15G01.controller;
 
 import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
+import feupL15G01.model.game.elements.Bomb;
 import feupL15G01.model.game.elements.Player;
+import feupL15G01.model.game.elements.Power;
 import feupL15G01.model.game.elements.Wall;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,6 +13,7 @@ import org.junit.jupiter.api.Test;
 
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,6 +22,8 @@ class PlayerControllerTest {
     private Player player;
     private Board board;
 
+    private Bomb bomb;
+
     @BeforeEach
     void setUp() {
         board = new Board(10, 10);
@@ -26,9 +31,14 @@ class PlayerControllerTest {
         player = new Player(5, 5);
         board.setPlayer(player);
 
+        bomb = new Bomb(9,9);
+        board.setBomb(bomb);
+
         board.setWalls(Arrays.asList());
         board.setEnemies(Arrays.asList());
         board.setFixBlocks(Arrays.asList());
+        board.setTempBlocks(Arrays.asList());
+        board.setPowers(Arrays.asList());
 
         controller = new PlayerController(board);
     }

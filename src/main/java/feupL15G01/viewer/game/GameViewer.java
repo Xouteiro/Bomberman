@@ -7,7 +7,6 @@ import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.Element;
 import feupL15G01.viewer.Viewer;
 
-import javax.sql.rowset.spi.TransactionalWriter;
 import java.util.List;
 
 public class GameViewer extends Viewer<Board> {
@@ -17,7 +16,6 @@ public class GameViewer extends Viewer<Board> {
 
     @Override
     public void drawElements(GUI gui) {
-
 
 
         for (int i = 0; i < getModel().getPowers().size(); i++) {
