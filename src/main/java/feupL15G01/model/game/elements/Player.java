@@ -13,6 +13,7 @@ public class Player extends Element {
     private boolean flamePassAbility = false;
 
     private boolean isOnTopOfTempBlock = false;
+
     public Player(int x, int y) {
         super(x, y);
         this.bombs = 1;

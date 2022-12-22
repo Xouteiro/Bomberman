@@ -10,7 +10,7 @@ import feupL15G01.states.MenuState;
 
 import java.io.IOException;
 
-public class WinController extends Controller<Win>{
+public class WinController extends Controller<Win> {
     public WinController(Win model) {
         super(model);
     }
@@ -26,7 +26,7 @@ public class WinController extends Controller<Win>{
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if(getModel().isSelectedBackToMainMenu()) game.setState(new MenuState(new Menu()));
+                if (getModel().isSelectedBackToMainMenu()) game.setState(new MenuState(new Menu()));
 
 
         }

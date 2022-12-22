@@ -18,7 +18,6 @@ public class BombController extends GameController{
         super(board);
     }
 
-
     private void dropBomb(){
         Position bombLastPosition = new Position(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY());
         getModel().getBomb().setPosition(getModel().getBomb().getPosition().goTo(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY()));
