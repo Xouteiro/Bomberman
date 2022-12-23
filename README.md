@@ -1,4 +1,4 @@
-# LDTS_T15G1 - Bomberman
+## LDTS_T15G1 - Bomberman
 
 A ideia principal do nosso projeto é recriar o jogo estragégico de computador Bomberman, através do uso de Java. O jogo envolve colocar bombas para explodir blocos, derrotar todos os inimigos e encontrar a porta para passar para o próximo nível.
 
@@ -27,9 +27,6 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 ![Game Over](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/GameOver.png)
 
-**Menu**
-
-![Menu](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Menu.png)
 
 **Vitória**
 
@@ -77,6 +74,20 @@ Dada a grande quantidade de código e diversas classes a utilizar ao todo, para 
 **Diagrama de classes UML**
 
 ![Diagram](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/diagram_2.png) 
+
+### GUI
+
+**Problema em contexto** 
+
+**Padrão utilizado**
+
+**Implementação**
+
+As classes relacionadas são as apresentadas abaixo e estão contidas nos ficheiros associados:
+
+- [Game](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/Game.java)
+- [GUI](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/gui/GUI.java)
+- [LanternaGUI](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/gui/LanternaGUI.java)
 
 ## Code Smells e Refactoring
 
