@@ -5,6 +5,7 @@ import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
 import feupL15G01.Game;
 import feupL15G01.model.game.board.Board;
+import feupL15G01.model.game.elements.Power;
 import feupL15G01.model.game.elements.Enemy;
 import feupL15G01.model.game.elements.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,6 +25,8 @@ class PlayerControllerTest {
     private Player player;
     private Board board;
     private Bomb bomb;
+    private Power power;
+    private Game game;
 
     @BeforeEach
     void setUp() {
@@ -110,6 +113,41 @@ class PlayerControllerTest {
         board.setEnemies(Arrays.asList(new Enemy(6, 5)));
         controller.movePlayerRight();
         assertEquals(2, player.getLives());
+    }
+
+    @Test
+    void losePowerWhenEnemyCollision() {
+        player.setBombPassAbility(true);
+        board.setEnemies(Arrays.asList(new Enemy(6, 5)));
+        controller.movePlayerRight();
+        assertEquals(false, player.hasBombPassAbility());
+    }
+
+    @Test
+    void loseFlamePassAbility() {
+        player.setFlamePassAbility(true);
+        board.setEnemies(Arrays.asList(new Enemy(6, 5)));
+        controller.movePlayerRight();
+        assertEquals(false, player.hasFlamePassAbility());
+    }
+
+    @Test
+    void loseTempBlockPassAbility() {
+        player.setTempBlockPassAbility(true);
+        board.setEnemies(Arrays.asList(new Enemy(6, 5)));
+        controller.movePlayerRight();
+        assertEquals(false, player.hasTempBlockPassAbility());
+    }
+
+    //erro
+    @Test
+    void increaseLives() throws IOException{
+        player.removeLife();
+        Power power = new Power(6, 5);
+        power.setType(1);
+        board.setPowers(Arrays.asList(power));
+        controller.movePlayerRight();
+        assertEquals(3, player.getLives());
     }
 
 

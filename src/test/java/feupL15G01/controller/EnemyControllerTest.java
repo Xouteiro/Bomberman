@@ -3,6 +3,7 @@ import feupL15G01.Game;
 import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
+import feupL15G01.Game;
 import feupL15G01.model.game.elements.Bomb;
 import feupL15G01.model.game.elements.Enemy;
 import feupL15G01.model.game.elements.Player;
@@ -90,4 +91,18 @@ class EnemyControllerTest {
 
         assertEquals(new Position(5, 6), enemy.getPosition());
     }
+    /*
+    @Test
+    void dieEnemy() throws IOException{
+        Enemy enemy = new Enemy(8,9);
+        board.setEnemies(Arrays.asList(enemy));
+
+        long time = 0;
+
+        if (board.isInRangeOf(enemy.getPosition(),new Position(9, 9))){
+            assertEquals(get);
+
+        }
+    }
+    */
 }
