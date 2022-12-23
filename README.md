@@ -15,8 +15,12 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 - **Vitória no jogo** - Este evento ocorre quando o jogador encontra a porta escondida num dos blocos destrutíveis e a porta só fica disponível quando todos os inimigos forem derrotados.
 
 
-## GIF
+## Features Planeadas
 
+- Foram implementadas todas as *features* que se pretendia obrigatoriamente ter concluídas aquando do começo do projeto.
+
+
+## GIF
 
 ![Arena](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/bombermanGIF.gif) 
 
@@ -68,7 +72,11 @@ Dada a grande quantidade de código e diversas classes a utilizar ao todo, para 
 
 **Problema em contexto** 
 
+A biblioteca Lanterna tem diversas funções que não têm uso para o nosso programa em concreto, uma violação do princípio da segregação de interfaces (Interface Segregation Principle), e está em falta no que toca a outras funções de que a aplicação realmente necessita.
+
 **Padrão utilizado**
+
+Foi utilizado o padrão *Facade*, que permite uma interface simples para um sistema complexo, permitindo escolher apenas as *features* que realmente são importantes para a aplicação em questão.
 
 **Implementação**
 
