@@ -98,7 +98,7 @@ Todas as classes na parte *model* são Data Classes, dado que contêm apenas fie
 
 **Refactoring do Código**
 
-Na parte final de revisão do código compilado, foram feitos refactors no sentido de remover comentários deixados no começo da programação, encurtar métodos mais longos: **game.setState(new GameState(new RandomBoardBuilder(32, 32, 4,150 , 15).createBoard()))** passa a **game.setState(new GameState(board))**, e clarificar alguns outros mais difíceis de entender a uma primeira vista.
+Na parte final de revisão do código compilado, foram feitos refactors no sentido de remover comentários deixados no começo da programação, encurtar métodos mais longos e clarificar alguns outros mais difíceis de entender a uma primeira vista. Por exemplo, **game.setState(new GameState(new RandomBoardBuilder(32, 32, 4,150 , 15).createBoard()))** passa a **game.setState(new GameState(board))**.
 
 ## Testagem
 
