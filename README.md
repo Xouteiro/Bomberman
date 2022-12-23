@@ -6,35 +6,22 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 ## Features Implementadas
 
-- **Poderes** - Vão-se encontrar escondidos nos blocos destrutíveis e irão permitir imunidade a explosões, assim como passagem por cima de bombas e blocos.
-- **Colocação de bombas** - A personagem vai colocar uma bomba no sítio onde se encontra ao premir a tecla "b".
-- **Derrotar os inimigos** - Se um inimigo estiver no alcance de uma bomba, vão ser derrotados.
-- **Explosão de blocos destrutíveis** - Se um destes blocos estiver no alcance de uma bomba, vão ser destruídos.
-- **Vitória no jogo** - Este evento ocorre ao encontrar a porta escondida num dos blocos destrutíveis e todos os inimigos estarem derrotados.
-- **Colisões** - O jogador irá colidir com as paredes exteriores e blocos fixos quando se mover na direção deles.
+- **Poderes** - Vão-se encontrar escondidos em alguns blocos destrutíveis e irão adicionar vidas ou pontos, irão permitir imunidade a explosões ou a passagem por cima de bombas ou blocos. Em caso de colisão com um inimigo os poderes são perdidos.
+- **Colocação de bombas** - O jogador coloca uma bomba no sítio onde se encontra ao premir a tecla B.
+- **Derrotar os inimigos** - Se um inimigo estiver no alcance de uma bomba vai ser derrotado.
+- **Explosão de blocos destrutíveis** - Os blocos que estiverem no alcance da explosão da bomba, vão ser destruídos.
+- **Colisões** - O jogador colide com paredes exteriores, blocos fixos, blocos temporários e a bomba, quando se mover na direção deles, e ao colidir com os inimigos perde uma vida.
+- **Game Over** - Este evento ocorre quando o jogaor perde todas as vidas.
+- **Vitória no jogo** - Este evento ocorre quando o jogador encontra a porta escondida num dos blocos destrutíveis e a porta só fica disponível quando todos os inimigos forem derrotados.
 
-## Features Planeadas
 
-- Foram implementadas todas as *features* que se pretendia obrigatoriamente ter concluídas aquando do começo do projeto.
+## GIF
 
-## Screenshots
-
-**Animação**
 
 ![Arena](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/bombermanGIF.gif) 
 
-**Game Over**
-
-![Game Over](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/GameOver.png)
-
-
-**Vitória**
-
-![Vitória](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Victory.png)
 
 ## Design
-
-### Comportamento da Personagem Controlada Variável
 
 **Problema em contexto** 
 
