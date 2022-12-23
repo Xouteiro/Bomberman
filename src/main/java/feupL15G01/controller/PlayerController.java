@@ -47,22 +47,22 @@ PlayerController extends GameController {
 
             }
 
-            if(getModel().isTempBlock(position)){
+            if (getModel().isTempBlock(position)) {
                 getModel().getPlayer().setOnTopOfTempBlock(true);
             }
             if (getModel().isLifePower(position)) {
                 int flag = 0;
-                for(int i = 0; i< getModel().getPowers().size(); i++){
-                    if(getModel().getPowers().get(i).getPosition().equals(position) && getModel().getPlayer().getLives()<3){
+                for (int i = 0; i < getModel().getPowers().size(); i++) {
+                    if (getModel().getPowers().get(i).getPosition().equals(position) && getModel().getPlayer().getLives() < 3) {
                         int j = 0;
-                        while(j<getModel().getTempBlocks().size()){
+                        while (j < getModel().getTempBlocks().size()) {
                             if (getModel().getTempBlocks().get(j).getPosition().equals(position)) {
                                 flag = 1;
                                 break;
                             }
                             j++;
                         }
-                        if(flag==0){
+                        if (flag == 0) {
                             getModel().getPlayer().addLife();
                             getModel().getPowers().remove(i);
                         }
@@ -73,17 +73,17 @@ PlayerController extends GameController {
             if (getModel().isPointsPower(position)) {
                 Random randomizer = new Random();
                 int flag = 0;
-                for(int i = 0; i< getModel().getPowers().size(); i++){
-                    if(getModel().getPowers().get(i).getPosition().equals(position)){
+                for (int i = 0; i < getModel().getPowers().size(); i++) {
+                    if (getModel().getPowers().get(i).getPosition().equals(position)) {
                         int j = 0;
-                        while(j<getModel().getTempBlocks().size()){
+                        while (j < getModel().getTempBlocks().size()) {
                             if (getModel().getTempBlocks().get(j).getPosition().equals(position)) {
                                 flag = 1;
                                 break;
                             }
                             j++;
                         }
-                        if(flag==0){
+                        if (flag == 0) {
                             getModel().getPlayer().incrementPoints(100 + randomizer.nextInt(400));
                             getModel().getPowers().remove(i);
                         }
@@ -150,12 +150,8 @@ PlayerController extends GameController {
             }
 
 
-
         }
     }
-
-
-
 
     @Override
     public void step(Game game, GUI.ACTION action, long time) {

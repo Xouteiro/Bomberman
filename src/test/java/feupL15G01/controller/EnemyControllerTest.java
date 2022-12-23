@@ -22,7 +22,6 @@ class EnemyControllerTest {
     private Player player;
     private Board board;
     private Game game;
-
     private Bomb bomb;
 
     @BeforeEach
@@ -52,7 +51,6 @@ class EnemyControllerTest {
         board.setEnemies(Arrays.asList(enemy));
 
         controller.step(game, GUI.ACTION.NONE, 1000);
-
         assertNotEquals(new Position(5, 5), enemy.getPosition());
     }
 
