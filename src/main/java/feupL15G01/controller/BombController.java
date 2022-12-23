@@ -5,8 +5,10 @@ import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.Bomb;
+import feupL15G01.model.game.elements.Explosion;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.CompletableFuture;
@@ -20,7 +22,9 @@ public class BombController extends GameController{
 
     private void dropBomb(){
         Position bombLastPosition = new Position(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY());
-        getModel().getBomb().setPosition(getModel().getBomb().getPosition().goTo(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY()));
+        Position bombNewPosition = getModel().getBomb().getPosition().goTo(getModel().getPlayer().getPosition().getX(), getModel().getPlayer().getPosition().getY());
+        
+        getModel().getBomb().setPosition(bombNewPosition);
         getModel().getPlayer().removeBomb();
 
         CompletableFuture.delayedExecutor(1500, TimeUnit.MILLISECONDS).execute(() -> {
@@ -47,22 +51,24 @@ public class BombController extends GameController{
             getModel().getBomb().setPosition(getModel().getBomb().getPosition().goTo(3, 3));
             getModel().getPlayer().addBomb();
 
-            getModel().getExplosions().get(0).setPosition(bombLastPosition.getUp());
-            getModel().getExplosions().get(1).setPosition(bombLastPosition.getLeft());
-            getModel().getExplosions().get(2).setPosition(bombLastPosition);
-            getModel().getExplosions().get(3).setPosition(bombLastPosition.getDown());
-            getModel().getExplosions().get(4).setPosition(bombLastPosition.getRight());
+            List<Explosion> explosions = getModel().getExplosions();
+
+            explosions.get(0).setPosition(bombLastPosition.getUp());
+            explosions.get(1).setPosition(bombLastPosition.getLeft());
+            explosions.get(2).setPosition(bombLastPosition);
+            explosions.get(3).setPosition(bombLastPosition.getDown());
+            explosions.get(4).setPosition(bombLastPosition.getRight());
 
             if(getModel().getEnemies().isEmpty()){
                 getModel().getDoor().setAvailable();
             }
 
             CompletableFuture.delayedExecutor(300, TimeUnit.MILLISECONDS).execute(() -> {
-                getModel().getExplosions().get(0).setPosition(new Position(3,3));
-                getModel().getExplosions().get(1).setPosition(new Position(3,3));
-                getModel().getExplosions().get(2).setPosition(new Position(3,3));
-                getModel().getExplosions().get(3).setPosition(new Position(3,3));
-                getModel().getExplosions().get(4).setPosition(new Position(3,3));
+                explosions.get(0).setPosition(new Position(3,3));
+                explosions.get(1).setPosition(new Position(3,3));
+                explosions.get(2).setPosition(new Position(3,3));
+                explosions.get(3).setPosition(new Position(3,3));
+                explosions.get(4).setPosition(new Position(3,3));
             });
         });
 

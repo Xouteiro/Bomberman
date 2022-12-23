@@ -1,44 +1,29 @@
 ## LDTS_T15G1 - Bomberman
 
-A ideia principal do nosso projeto é recriar o jogo estragégico de computador Bomberman, através do uso de Java. O jogo envolve colocar bombas para explodir blocos, derrotar todos os inimigos e encontrar a porta para passar para o próximo nível.
+A ideia principal do nosso projeto é recriar o jogo estragégico de computador Bomberman, através do uso de Java. O jogo envolve colocar bombas para explodir blocos, derrotar todos os inimigos e encontrar a porta para vencer o jogo.
 
 O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro para a disciplina de LDTS 2022⁄23.
 
-### FEATURES IMPLEMENTADAS
+## Features Implementadas
 
-- **Poderes** - Vão-se encontrar escondidos nos blocos destrutíveis e irão permitir imunidade a explosões, assim como passagem por cima de bombas e blocos.
-- **Colocação de bombas** - A personagem vai colocar uma bomba no sítio onde se encontra ao premir a tecla "b".
-- **Derrotar os inimigos** - Se um inimigo estiver no alcance de uma bomba, vão ser derrotados.
-- **Explosão de blocos destrutíveis** - Se um destes blocos estiver no alcance de uma bomba, vão ser destruídos.
-- **Vitória no jogo** - Este evento ocorre ao encontrar a porta escondida num dos blocos destrutíveis e todos os inimigos estarem derrotados.
-- **Colisões** - O jogador irá colidir com as paredes exteriores e blocos fixos quando se mover na direção deles.
+- **Poderes** - Vão-se encontrar escondidos em alguns blocos destrutíveis e irão adicionar vidas ou pontos, irão permitir imunidade a explosões ou a passagem por cima de bombas ou blocos. Em caso de colisão com um inimigo os poderes são perdidos.
+- **Colocação de bombas** - O jogador coloca uma bomba no sítio onde se encontra ao premir a tecla B.
+- **Derrotar os inimigos** - Se um inimigo estiver no alcance de uma bomba vai ser derrotado.
+- **Explosão de blocos destrutíveis** - Os blocos que estiverem no alcance da explosão da bomba, vão ser destruídos.
+- **Colisões** - O jogador colide com paredes exteriores, blocos fixos, blocos temporários e a bomba, quando se mover na direção deles, e ao colidir com os inimigos perde uma vida.
+- **Game Over** - Este evento ocorre quando o jogaor perde todas as vidas.
+- **Vitória no jogo** - Este evento ocorre quando o jogador encontra a porta escondida num dos blocos destrutíveis e a porta só fica disponível quando todos os inimigos forem derrotados.
 
-### FEATURES PLANEADAS
 
-- Foram implementadas todas as *features* que se pretendia obrigatoriamente ter concluídas aquando do começo do projeto.
+## GIF
 
-### MOCKUPS
 
-**Arena**
+![Arena](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/bombermanGIF.gif) 
 
-![Arena](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Arena.png) 
 
-**Game Over**
+## Design
 
-![Game Over](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/GameOver.png)
-
-**Menu**
-
-![Menu](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Menu.png)
-
-**Vitória**
-
-![Vitória](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/Victory.png)
-
-### DESIGN
-
-#### COMPORTAMENTO DA PERSONAGEM CONTROLADA VARIÁVEL
-
+### Comportamento da Personagem Controlada Variável
 
 **Problema em contexto** 
 
@@ -65,8 +50,7 @@ As classes relacionadas são as apresentadas abaixo e estão contidas nos fichei
 - Os vários estados que representam as abilidades e comportamento da personagem principal ficam explícitos no código, em vez de baseados em flags.
 - Não será necessário o uso de grandes conjuntos de *ifs* e *switches* associados aos diversos estados. Ao invés disso, o polimorfismo vai ativar as ações certas.
 
-#### EXCESSO DE CÓDIGO NUMA SECÇÃO E DIFÍCIL LEITURA
-
+### Estrutura Geral do Código
 
 **Problema em contexto** 
 
@@ -80,13 +64,35 @@ Dada a grande quantidade de código e diversas classes a utilizar ao todo, para 
 
 ![Diagram](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/diagram_2.png) 
 
-### TESTAGEM
+### GUI
+
+**Problema em contexto** 
+
+**Padrão utilizado**
+
+**Implementação**
+
+As classes relacionadas são as apresentadas abaixo e estão contidas nos ficheiros associados:
+
+- [Game](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/Game.java)
+- [GUI](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/gui/GUI.java)
+- [LanternaGUI](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/src/main/java/feupL15G01/gui/LanternaGUI.java)
+
+## Code Smells e Refactoring
+
+### Classes de Grande Tamanho
+Certas classes, nomeadamente a *Game*, têm um grande tamanho enquanto outras, como a GUI contêm muitos métodos. Porém, são ambas justificáveis devido ao facto de Game ser a classe principal para a aplicação interativa propriamente dita, e necessariamente precisar de armazenar muitos dados, enquanto que apenas podemos chamar muitos métodos a partir do GUI também, não fazendo sentido subdividir esta classe também.
+
+### Data Classes
+Todas as classes na parte *model* são Data Classes, dado que contêm apenas fields, e nenhum comportamento. Isto deve-se à estrutura escolhida de MVC (Model-View-Controller) como padrão de arquitetura, onde o controlador vai implementar as funcionalidades de lógica dessa parte. Não se trata, portanto, de um *code smell*, sendo apenas uma consequência natural da estrutura escolhida para o código.
+
+## Testagem
 
 **Coverage testing**
 
 ![Coverage](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/coverageInterm.png) 
 
-### AUTOAVALIAÇÃO
+## Autoavaliação
 
 - Daniel Vecera: 33.3%
 - Gabriela Silva: 33.3%
