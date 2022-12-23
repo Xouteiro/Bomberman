@@ -1,6 +1,6 @@
 ## LDTS_T15G1 - Bomberman
 
-A ideia principal do nosso projeto é recriar o jogo estragégico de computador Bomberman, através do uso de Java. O jogo envolve colocar bombas para explodir blocos, derrotar todos os inimigos e encontrar a porta para passar para o próximo nível.
+A ideia principal do nosso projeto é recriar o jogo estragégico de computador Bomberman, através do uso de Java. O jogo envolve colocar bombas para explodir blocos, derrotar todos os inimigos e encontrar a porta para vencer o jogo.
 
 O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro para a disciplina de LDTS 2022⁄23.
 
@@ -22,6 +22,8 @@ O projeto foi desenvolvido por Daniel Vecera, Gabriela Silva e Xavier Outeiro pa
 
 
 ## Design
+
+### Comportamento da Personagem Controlada Variável
 
 **Problema em contexto** 
 
@@ -79,10 +81,10 @@ As classes relacionadas são as apresentadas abaixo e estão contidas nos fichei
 ## Code Smells e Refactoring
 
 ### Classes de Grande Tamanho
-Certas classes, nomeadamente a Game, têm um grande tamanho enquanto outras, como a GUI contêm muitos métodos. Porém, são ambas justificáveis devido ao facto de Game ser a classe principal para a aplicação interativa propriamente dita, e necessariamente precisar de armazenar muitos dados, enquanto que apenas podemos chamar muitos métodos a partir do GUI também, não fazendo sentido subdividir esta classe também.
+Certas classes, nomeadamente a *Game*, têm um grande tamanho enquanto outras, como a GUI contêm muitos métodos. Porém, são ambas justificáveis devido ao facto de Game ser a classe principal para a aplicação interativa propriamente dita, e necessariamente precisar de armazenar muitos dados, enquanto que apenas podemos chamar muitos métodos a partir do GUI também, não fazendo sentido subdividir esta classe também.
 
 ### Data Classes
-Todas as classes na parte *model* são Data Classes, dado que contêm apenas fields, e nenhum comportamento. Isto deve-se à estrutura escolhida de **MVC** (Model-View-Controller) como padrão de arquitetura, onde o controlador vai implementar as funcionalidades de lógica dessa parte. Não se trata, portanto, de um *code smell*, sendo apenas uma consequência natural da estrutura escolhida para o código.
+Todas as classes na parte *model* são Data Classes, dado que contêm apenas fields, e nenhum comportamento. Isto deve-se à estrutura escolhida de MVC (Model-View-Controller) como padrão de arquitetura, onde o controlador vai implementar as funcionalidades de lógica dessa parte. Não se trata, portanto, de um *code smell*, sendo apenas uma consequência natural da estrutura escolhida para o código.
 
 ## Testagem
 
