@@ -104,7 +104,7 @@ Na parte final de revisão do código compilado, foram feitos refactors no senti
 
 **Coverage testing**
 
-![Coverage](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/coverageInterm.png) 
+![Coverage](https://github.com/FEUP-LDTS-2022/project-l15gr01/blob/develop/images/coverage_2.png) 
 
 ## Autoavaliação
 
