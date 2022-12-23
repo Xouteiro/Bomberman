@@ -1,27 +1,27 @@
 package feupL15G01.viewer;
 
 import feupL15G01.gui.GUI;
-import feupL15G01.model.game.elements.Player;
-import feupL15G01.viewer.game.PlayerViewer;
+import feupL15G01.model.game.elements.Enemy;
+import feupL15G01.viewer.game.EnemyViewer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-class PlayerViewerTest {
-    private Player player;
-    private PlayerViewer viewer;
+class EnemyViewerTest {
+    private Enemy enemy;
+    private EnemyViewer viewer;
     private GUI gui;
 
     @BeforeEach
     void setUp() {
-        player = new Player(10, 10);
-        viewer = new PlayerViewer();
+        enemy = new Enemy(8, 8);
+        viewer = new EnemyViewer();
         gui = Mockito.mock(GUI.class);
     }
 
     @Test
     void drawElement() {
-        viewer.draw(player, gui);
-        Mockito.verify(gui, Mockito.times(1)).drawPlayer(player.getPosition());
+        viewer.draw(enemy, gui);
+        Mockito.verify(gui, Mockito.times(1)).drawEnemy(enemy.getPosition());
     }
 }
