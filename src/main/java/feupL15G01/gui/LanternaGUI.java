@@ -184,7 +184,7 @@ public class LanternaGUI implements GUI {
     private void drawCharacter(int x, int y, char c,  String color, String backgroundColor) {
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
-        tg.setBackgroundColor(TextColor.Factory.fromString(backgroundColor)); //exemplo de mudar cor de fundo do caracter
+        tg.setBackgroundColor(TextColor.Factory.fromString(backgroundColor));
         tg.putString(x, y + 1, "" + c);
     }
 

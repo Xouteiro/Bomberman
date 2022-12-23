@@ -2,6 +2,7 @@ package feupL15G01.controller;
 
 import feupL15G01.Game;
 import feupL15G01.gui.GUI;
+import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.board.RandomBoardBuilder;
 import feupL15G01.model.menu.Menu;
 import feupL15G01.states.GameState;
@@ -24,8 +25,9 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) game.setState(null);
-                if (getModel().isSelectedStart())
-                    game.setState(new GameState(new RandomBoardBuilder(32, 32, 4,150 , 15).createBoard()));
+                if (getModel().isSelectedStart()) {
+                    game.setState(new GameState(board));
+                }
 
         }
     }

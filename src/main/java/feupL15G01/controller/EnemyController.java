@@ -5,6 +5,7 @@ import feupL15G01.gui.GUI;
 import feupL15G01.model.Position;
 import feupL15G01.model.game.board.Board;
 import feupL15G01.model.game.elements.Enemy;
+import feupL15G01.model.game.elements.Player;
 
 import java.io.IOException;
 
@@ -29,9 +30,9 @@ public class EnemyController extends GameController {
     private void moveEnemy(Enemy enemy, Position position) {
         if (getModel().isEmptyForEnemy(position)) {
             enemy.setPosition(position);
-            if (getModel().getPlayer().getPosition().equals(position))
-               getModel().getPlayer().removeLife();
-
+            Player player = getModel().getPlayer();
+            if (player.getPosition().equals(position))
+               player.removeLife();
         }
     }
 }
