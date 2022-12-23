@@ -88,11 +88,17 @@ As classes relacionadas são as apresentadas abaixo e estão contidas nos fichei
 
 ## Code Smells e Refactoring
 
-### Classes de Grande Tamanho
+**Classes de Grande Tamanho**
+
 Certas classes, nomeadamente a *Game*, têm um grande tamanho enquanto outras, como a GUI contêm muitos métodos. Porém, são ambas justificáveis devido ao facto de Game ser a classe principal para a aplicação interativa propriamente dita, e necessariamente precisar de armazenar muitos dados, enquanto que apenas podemos chamar muitos métodos a partir do GUI também, não fazendo sentido subdividir esta classe também.
 
-### Data Classes
+**Data Classes**
+
 Todas as classes na parte *model* são Data Classes, dado que contêm apenas fields, e nenhum comportamento. Isto deve-se à estrutura escolhida de MVC (Model-View-Controller) como padrão de arquitetura, onde o controlador vai implementar as funcionalidades de lógica dessa parte. Não se trata, portanto, de um *code smell*, sendo apenas uma consequência natural da estrutura escolhida para o código.
+
+**Refactoring do Código**
+
+Na parte final de revisão do código compilado, foram feitos refactors no sentido de remover comentários deixados no começo da programação, encurtar métodos mais longos: **game.setState(new GameState(new RandomBoardBuilder(32, 32, 4,150 , 15).createBoard()))** passa a **game.setState(new GameState(board))**, e clarificar alguns outros mais difíceis de entender a uma primeira vista.
 
 ## Testagem
 
