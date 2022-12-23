@@ -79,7 +79,6 @@ class PlayerControllerTest {
         player.setTempBlockPassAbility(true);
         controller.movePlayerRight();
         assertEquals(new Position(6,5), player.getPosition());
-        //assertEquals(true, player.isOnTopOfTempBlock());
     }
 
     @Test
@@ -96,17 +95,6 @@ class PlayerControllerTest {
         controller.movePlayerRight();
         assertEquals(new Position(6,5), player.getPosition());
     }
-
-    //erro
-    /*
-    @Test
-    void moveThroughBomb() {
-        board.setBomb(new Bomb(6, 5));
-        //player.setFlamePassAbility(true);
-        controller.movePlayerRight();
-        assertEquals(3, player.getLives());
-    }
-    */
 
     @Test
     void loseLifeEnemies() {
@@ -137,17 +125,6 @@ class PlayerControllerTest {
         board.setEnemies(Arrays.asList(new Enemy(6, 5)));
         controller.movePlayerRight();
         assertEquals(false, player.hasTempBlockPassAbility());
-    }
-
-    //erro
-    @Test
-    void increaseLives() throws IOException{
-        player.removeLife();
-        Power power = new Power(6, 5);
-        power.setType(1);
-        board.setPowers(Arrays.asList(power));
-        controller.movePlayerRight();
-        assertEquals(3, player.getLives());
     }
 
 

@@ -91,18 +91,5 @@ class EnemyControllerTest {
 
         assertEquals(new Position(5, 6), enemy.getPosition());
     }
-    /*
-    @Test
-    void dieEnemy() throws IOException{
-        Enemy enemy = new Enemy(8,9);
-        board.setEnemies(Arrays.asList(enemy));
 
-        long time = 0;
-
-        if (board.isInRangeOf(enemy.getPosition(),new Position(9, 9))){
-            assertEquals(get);
-
-        }
-    }
-    */
 }
